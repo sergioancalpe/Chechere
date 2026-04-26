@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'DM Mono', monospace;
+  font-family: 'snaga-unicase-display', sans-serif;
   background: var(--c);
   color: var(--t);
   overflow-x: hidden;
@@ -90,15 +90,15 @@ nav {
 }
 
 .logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 900;
   letter-spacing: .14em;
   color: var(--n);
   text-decoration: none;
 }
 
-.logo span { color: var(--p2); }
+.logo span { color: var(--p2); font-weight: 300; }
 
 .nav-r {
   display: flex;
@@ -183,7 +183,7 @@ nav {
 }
 
 .hero-h {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: clamp(40px, 7vw, 84px);
   font-weight: 300;
   color: #fff;
@@ -266,9 +266,9 @@ nav {
 }
 
 .face-word {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 36px;
-  font-weight: 300;
+  font-weight: 900;
   color: #fff;
   line-height: 1;
   letter-spacing: .06em;
@@ -279,6 +279,7 @@ nav {
   color: var(--p);
   font-style: italic;
   font-size: 20px;
+  font-weight: 300;
   display: block;
   margin-top: 2px;
 }
@@ -372,7 +373,7 @@ section { padding: 96px 48px; }
 .sec-label--casos { margin-bottom: 1.5rem; }
 
 .sec-h {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: clamp(28px, 4vw, 52px);
   font-weight: 300;
   line-height: 1.1;
@@ -426,7 +427,7 @@ section { padding: 96px 48px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 15px;
   color: var(--p2);
   flex-shrink: 0;
@@ -496,7 +497,7 @@ section { padding: 96px 48px; }
 }
 
 .sv-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 26px;
   font-weight: 300;
   color: #fff;
@@ -573,7 +574,7 @@ section { padding: 96px 48px; }
 .port-card:hover .port-img-photo { transform: scale(1.04); }
 
 .port-img-n {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 64px;
   font-weight: 300;
   color: rgba(184, 184, 184, .1);
@@ -608,7 +609,7 @@ section { padding: 96px 48px; }
 .port-info { padding: 18px 20px; }
 
 .port-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: var(--n);
@@ -653,7 +654,7 @@ section { padding: 96px 48px; }
 }
 
 .paso-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 22px;
   font-weight: 300;
   color: var(--n);
@@ -708,7 +709,7 @@ section { padding: 96px 48px; }
   font-size: 14px;
   color: var(--p2);
   margin-bottom: 1.2rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
 }
 
 .sol-title {
@@ -791,7 +792,7 @@ section { padding: 96px 48px; }
   border-top: none;
   border-left: none;
   border-right: none;
-  font-family: 'DM Mono', monospace;
+  font-family: 'snaga-unicase-display', sans-serif;
 }
 
 .s-tab.on    { color: var(--n); border-bottom-color: var(--n); }
@@ -935,7 +936,7 @@ section { padding: 96px 48px; }
 }
 
 .ct-info-h {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 28px;
   font-weight: 300;
   color: var(--n);
@@ -1000,7 +1001,7 @@ a.ct-val:hover { color: var(--n); }
   background: #fff;
   border: .5px solid var(--borde);
   padding: 9px 12px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 12px;
   color: var(--t);
   outline: none;
@@ -1032,7 +1033,7 @@ a.ct-val:hover { color: var(--n); }
   color: var(--p);
   border: none;
   padding: 13px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 9px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -1068,15 +1069,15 @@ footer {
 }
 
 .f-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 900;
   color: #fff;
   letter-spacing: .12em;
   text-decoration: none;
 }
 
-.f-logo span { color: var(--p2); }
+.f-logo span { color: var(--p2); font-weight: 300; }
 
 .f-links {
   display: flex;
@@ -1152,7 +1153,7 @@ footer {
 .mob-menu.open { display: flex; opacity: 1; }
 
 .mob-menu a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 36px;
   font-weight: 300;
   color: #fff;
@@ -1164,7 +1165,7 @@ footer {
 .mob-menu a:hover { color: var(--p); }
 
 .mob-menu .mob-cta {
-  font-family: 'DM Mono', monospace;
+  font-family: 'snaga-unicase-display', sans-serif;
   font-size: 10px;
   letter-spacing: .2em;
   text-transform: uppercase;
