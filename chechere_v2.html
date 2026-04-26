@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chechere Arquitectos — Bogotá</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --n:#0f0f0e;--n2:#1a1a18;--n3:#242422;
+  --p:#B8B8B8;--p2:#888;--p3:#555;
+  --c:#F5F4F0;--c2:#ECEAE4;--c3:#E0DED8;
+  --t:#2a2a28;--m:#6b6b68;
+  --borde:rgba(0,0,0,0.09);
+  --s:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:14px}
+body{font-family:'DM Mono',monospace;background:var(--c);color:var(--t);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cur{position:fixed;width:8px;height:8px;background:var(--n);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+#cur2{position:fixed;width:32px;height:32px;border:0.5px solid var(--p3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .12s var(--s),width .2s,height .2s,opacity .2s}
+body:has(a:hover) #cur,body:has(button:hover) #cur{width:14px;height:14px;background:var(--p)}
+body:has(a:hover) #cur2,body:has(button:hover) #cur2{width:48px;height:48px;opacity:.5}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:rgba(245,244,240,.94);backdrop-filter:blur(16px);border-bottom:.5px solid var(--borde)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:.14em;color:var(--n);text-decoration:none}
+.logo span{color:var(--p2)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-r a{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--m);text-decoration:none;transition:color .2s}
+.nav-r a:hover{color:var(--n)}
+.nav-cta{padding:8px 18px;border:.5px solid var(--n);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--n);text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--n);color:var(--c)}
+
+/* ─── HERO / CAJA 3D ─── */
+#hero{min-height:100vh;background:var(--n);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 48px 64px;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,184,184,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(184,184,184,.03) 1px,transparent 1px);background-size:56px 56px}
+
+.hero-top{text-align:center;margin-bottom:4rem;z-index:1}
+.hero-eyebrow{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--p2);margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;gap:16px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:32px;height:.5px;background:var(--p3)}
+.hero-h{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,84px);font-weight:300;color:#fff;line-height:.95;letter-spacing:-.01em}
+.hero-h em{font-style:italic;color:var(--p)}
+
+/* SCENE 3D */
+.scene{width:340px;height:340px;perspective:900px;z-index:1;margin:0 auto}
+.box3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;transform:rotateX(-18deg) rotateY(28deg);animation:autoRotate 18s linear infinite;transition:transform .5s var(--s)}
+.box3d:hover{animation-play-state:paused}
+@keyframes autoRotate{
+  0%{transform:rotateX(-18deg) rotateY(28deg)}
+  100%{transform:rotateX(-18deg) rotateY(388deg)}
+}
+
+/* CARAS */
+.face{position:absolute;width:340px;height:340px;backface-visibility:visible;border:.5px solid rgba(184,184,184,.15);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;cursor:pointer;transition:background .3s,border-color .3s;text-decoration:none}
+.face::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;background:rgba(184,184,184,.04)}
+.face:hover::before{opacity:1}
+.face:hover{border-color:rgba(184,184,184,.4)}
+
+.face-front {transform:translateZ(170px);background:rgba(26,26,24,.96)}
+.face-back  {transform:rotateY(180deg) translateZ(170px);background:rgba(20,20,18,.97)}
+.face-right {transform:rotateY(90deg) translateZ(170px);background:rgba(22,22,20,.96)}
+.face-left  {transform:rotateY(-90deg) translateZ(170px);background:rgba(18,18,16,.97)}
+.face-top   {transform:rotateX(90deg) translateZ(170px);background:rgba(28,28,26,.95)}
+.face-bottom{transform:rotateX(-90deg) translateZ(170px);background:rgba(16,16,14,.98)}
+
+.face-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--p2);margin-bottom:.6rem}
+.face-word{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;line-height:1;letter-spacing:.06em;margin-bottom:.5rem}
+.face-word em{color:var(--p);font-style:italic;font-size:20px;display:block;margin-top:2px}
+.face-desc{font-size:10px;color:rgba(184,184,184,.5);line-height:1.5;max-width:260px}
+.face-arrow{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--p2);border-bottom:.5px solid rgba(184,184,184,.2);padding-bottom:2px;transition:color .2s,border-color .2s}
+.face:hover .face-arrow{color:var(--p);border-color:var(--p)}
+
+/* hint */
+.box-hint{margin-top:1.5rem;text-align:center;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--p3);z-index:1;animation:fadeHint 3s ease 2s forwards}
+@keyframes fadeHint{0%{opacity:1}100%{opacity:0;pointer-events:none}}
+
+.hero-scroll-wrap{position:absolute;left:48px;bottom:40px;display:flex;align-items:center;gap:12px}
+.hero-scroll-line{width:48px;height:.5px;background:var(--p3)}
+.hero-scroll-txt{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--p3)}
+
+/* ─── SECCIONES ─── */
+section{padding:96px 48px}
+.sec-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--p2);margin-bottom:2.5rem;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:.5px;background:var(--borde)}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;line-height:1.1;letter-spacing:-.01em;margin-bottom:1.5rem}
+.sec-h em{font-style:italic;color:var(--p2)}
+
+/* ─── NOSOTROS ─── */
+#nosotros{background:var(--c)}
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:2rem}
+.nos-body p{font-size:13px;color:var(--m);line-height:1.95;margin-bottom:1.4rem}
+.nos-body p strong{color:var(--t);font-weight:400}
+.cred{display:flex;gap:14px;padding:14px 18px;border:.5px solid var(--borde);background:#fff;margin-bottom:10px;transition:border-color .2s}
+.cred:hover{border-color:var(--p2)}
+.cred-ico{width:34px;height:34px;border:.5px solid var(--p);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--p2);flex-shrink:0}
+.cred-t{font-size:11px;color:var(--t)}
+.cred-s{font-size:10px;color:var(--m);margin-top:2px}
+
+/* ─── SERVICIOS ─── */
+#servicios{background:var(--n);color:#fff}
+#servicios .sec-label{color:var(--p2)}
+#servicios .sec-label::after{background:rgba(255,255,255,.08)}
+#servicios .sec-h{color:#fff}
+#servicios .sec-h em{color:var(--p)}
+
+.sv-intro{font-size:13px;color:var(--p2);line-height:1.85;max-width:560px;margin-bottom:3rem}
+.sv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);margin-bottom:2rem}
+.sv-card{background:var(--n);padding:36px 32px;transition:background .3s;cursor:default;border:.5px solid rgba(255,255,255,.06)}
+.sv-card:hover{background:var(--n2)}
+.sv-card.featured{border-color:rgba(184,184,184,.2)}
+.sv-badge{font-size:9px;letter-spacing:.15em;padding:3px 10px;border-radius:999px;background:rgba(184,184,184,.08);color:var(--p2);display:inline-block;margin-bottom:1rem}
+.sv-num{font-size:9px;letter-spacing:.2em;color:var(--p3);margin-bottom:1rem}
+.sv-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#fff;margin-bottom:.5rem;letter-spacing:.03em}
+.sv-price{font-size:11px;color:var(--p2);margin-bottom:1rem}
+.sv-desc{font-size:11px;color:var(--p2);line-height:1.8;margin-bottom:1.2rem}
+.sv-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sv-tag{font-size:9px;letter-spacing:.08em;padding:3px 9px;border:.5px solid rgba(184,184,184,.18);color:var(--p2)}
+
+/* ─── PORTAFOLIO ─── */
+#portafolio{background:var(--c2)}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2rem}
+.port-card{background:#fff;border:.5px solid var(--borde);overflow:hidden;cursor:pointer;transition:transform .3s var(--s)}
+.port-card:hover{transform:translateY(-6px)}
+.port-img{height:220px;background:var(--n);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.port-img-n{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:rgba(184,184,184,.1);letter-spacing:-.05em;transition:transform .4s var(--s)}
+.port-card:hover .port-img-n{transform:scale(1.1)}
+.port-cat{position:absolute;top:12px;left:12px;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--p2);padding:4px 9px;border:.5px solid rgba(184,184,184,.25)}
+.port-year{position:absolute;bottom:12px;right:12px;font-size:9px;color:var(--p3)}
+.port-info{padding:18px 20px}
+.port-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--n);margin-bottom:3px}
+.port-sub{font-size:10px;color:var(--m)}
+
+/* PORTAFOLIO grande (featured) */
+.port-card.wide{grid-column:span 2}
+.port-card.wide .port-img{height:320px}
+.port-card.wide .port-img-n{font-size:96px}
+.port-card.wide .port-title{font-size:26px}
+
+/* ─── PROCESO ─── */
+#proceso{background:var(--c)}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:2.5rem;border-top:.5px solid var(--borde)}
+.paso{padding:28px 24px 28px 0;border-right:.5px solid var(--borde)}
+.paso:not(:first-child){padding-left:24px}
+.paso:last-child{border-right:none;padding-right:0}
+.paso-num{font-size:9px;letter-spacing:.2em;color:var(--p2);margin-bottom:1rem}
+.paso-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--n);margin-bottom:.6rem;letter-spacing:.02em}
+.paso-desc{font-size:11px;color:var(--m);line-height:1.8}
+
+/* ─── SOLIDARIO ─── */
+#solidario{background:var(--n);color:#fff}
+#solidario .sec-label{color:var(--p2)}
+#solidario .sec-label::after{background:rgba(255,255,255,.08)}
+#solidario .sec-h{color:#fff}
+#solidario .sec-h em{color:var(--p)}
+.sol-intro{font-size:13px;color:var(--p2);line-height:1.9;max-width:580px;margin-bottom:3rem}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.05)}
+.sol-card{background:var(--n);padding:32px;border:.5px solid rgba(255,255,255,.05);transition:background .3s}
+.sol-card:hover{background:var(--n2)}
+.sol-icon{width:32px;height:32px;border:.5px solid rgba(184,184,184,.2);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--p2);margin-bottom:1.2rem;font-family:'Cormorant Garamond',serif}
+.sol-title{font-size:14px;font-weight:400;color:#fff;margin-bottom:.5rem}
+.sol-desc{font-size:11px;color:var(--p2);line-height:1.75}
+.sol-casos{margin-top:3rem;border-top:.5px solid rgba(255,255,255,.07);padding-top:2.5rem}
+.sol-caso{display:flex;gap:20px;padding:16px 0;border-bottom:.5px solid rgba(255,255,255,.05);align-items:flex-start}
+.sol-caso:last-child{border-bottom:none}
+.sol-caso-num{font-size:9px;letter-spacing:.15em;color:var(--p3);min-width:28px;margin-top:2px}
+.sol-caso-t{font-size:13px;color:#fff;margin-bottom:3px}
+.sol-caso-d{font-size:11px;color:var(--p2);line-height:1.6}
+
+/* ─── SECOP ─── */
+#secop{background:var(--c2)}
+.secop-intro{font-size:13px;color:var(--m);line-height:1.9;max-width:600px;margin-bottom:3rem}
+.s-tabs{display:flex;gap:0;border-bottom:.5px solid var(--borde);margin-bottom:2.5rem}
+.s-tab{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--m);padding:10px 22px;cursor:pointer;border-bottom:1.5px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'DM Mono',monospace}
+.s-tab.on{color:var(--n);border-bottom-color:var(--n)}
+.s-tab:hover{color:var(--n)}
+.s-panel{display:none}
+.s-panel.on{display:block}
+.s-step{display:flex;gap:20px;padding:18px 0;border-bottom:.5px solid var(--borde);align-items:flex-start}
+.s-step:last-child{border-bottom:none}
+.s-box{width:30px;height:30px;border:.5px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--m);flex-shrink:0;margin-top:2px}
+.s-t{font-size:13px;color:var(--t);margin-bottom:3px;font-weight:400}
+.s-d{font-size:11px;color:var(--m);line-height:1.7}
+.s-link{display:inline-block;margin-top:5px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--n);text-decoration:none;border-bottom:.5px solid rgba(0,0,0,.2);padding-bottom:1px}
+.s-link:hover{border-color:var(--n)}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.5rem}
+.doc-i{display:flex;gap:10px;padding:12px 14px;border:.5px solid var(--borde);background:#fff;align-items:flex-start}
+.doc-ico{width:26px;height:26px;border:.5px solid var(--borde);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--m);flex-shrink:0}
+.doc-txt{font-size:11px;color:var(--m);line-height:1.45}
+.doc-txt strong{color:var(--t);font-weight:400;display:block;margin-bottom:1px}
+.alert{border:.5px solid var(--borde);padding:14px 18px;margin-top:1.5rem;background:#fff;display:flex;gap:10px}
+.alert-i{font-size:11px;color:var(--p2);flex-shrink:0;margin-top:1px}
+.alert-t{font-size:11px;color:var(--m);line-height:1.7}
+.alert-t strong{color:var(--t);font-weight:400}
+
+/* ─── CONTACTO ─── */
+#contacto{background:var(--c)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:2rem}
+.ct-info h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--n);margin-bottom:1.5rem;line-height:1.3}
+.ct-item{display:flex;gap:12px;margin-bottom:14px}
+.ct-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--p2);min-width:68px;margin-top:1px}
+.ct-val{font-size:12px;color:var(--t)}
+.f-group{margin-bottom:14px}
+.f-group label{display:block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--m);margin-bottom:5px}
+.f-group input,.f-group textarea,.f-group select{width:100%;background:#fff;border:.5px solid var(--borde);padding:9px 12px;font-family:'DM Mono',monospace;font-size:12px;color:var(--t);outline:none;transition:border-color .2s;appearance:none;-webkit-appearance:none}
+.f-group input:focus,.f-group textarea:focus,.f-group select:focus{border-color:var(--p2)}
+.f-group textarea{height:88px;resize:none}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-send{width:100%;background:var(--n);color:var(--p);border:none;padding:13px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:6px}
+.btn-send:hover{background:var(--n2)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid rgba(255,255,255,.06)}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:#fff;letter-spacing:.12em;text-decoration:none}
+.f-logo span{color:var(--p2)}
+.f-links{display:flex;gap:22px}
+.f-links a{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--p2);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:#fff}
+.f-copy{font-size:9px;color:rgba(255,255,255,.18)}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .75s var(--s),transform .75s var(--s)}
+.fi.v{opacity:1;transform:none}
+
+/* ── HAMBURGER ── */
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
+.ham span{display:block;width:22px;height:.5px;background:var(--n);transition:transform .3s,opacity .3s}
+.ham.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+
+.mob-menu{display:none;position:fixed;inset:0;background:var(--n);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .3s}
+.mob-menu.open{display:flex;opacity:1}
+.mob-menu a{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.mob-menu a:hover{color:var(--p)}
+.mob-menu .mob-cta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--p2);border:.5px solid rgba(184,184,184,.3);padding:12px 28px;margin-top:1rem}
+
+/* ── TABLET 768–1024 ── */
+@media(max-width:1024px) and (min-width:769px){
+  nav{padding:16px 32px}
+  section{padding:80px 32px}
+  #hero{padding:100px 32px 56px}
+
+  .scene{width:300px;height:300px}
+  .face{width:300px;height:300px}
+  .face-front {transform:translateZ(150px)}
+  .face-back  {transform:rotateY(180deg) translateZ(150px)}
+  .face-right {transform:rotateY(90deg)  translateZ(150px)}
+  .face-left  {transform:rotateY(-90deg) translateZ(150px)}
+  .face-top   {transform:rotateX(90deg)  translateZ(150px)}
+  .face-bottom{transform:rotateX(-90deg) translateZ(150px)}
+  .face-word{font-size:30px}
+  .face-desc{font-size:9px}
+
+  .nos-grid{gap:48px}
+  .port-grid{grid-template-columns:repeat(2,1fr)}
+  .port-card.wide{grid-column:span 2}
+  .sv-grid{grid-template-columns:repeat(2,1fr)}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-steps{grid-template-columns:repeat(2,1fr)}
+  .paso:nth-child(2){border-right:.5px solid var(--borde)}
+  .paso:nth-child(even){border-right:none}
+  .paso:nth-child(1),.paso:nth-child(2){border-bottom:.5px solid var(--borde);padding-bottom:24px}
+  .ct-grid{gap:48px}
+  .doc-grid{grid-template-columns:repeat(2,1fr)}
+  .f-links{gap:16px}
+}
+
+/* ── MÓVIL ── */
+@media(max-width:768px){
+  /* cursor custom off en touch */
+  #cur,#cur2{display:none}
+  body{cursor:auto}
+
+  /* NAV */
+  nav{padding:14px 20px}
+  .nav-r{display:none}
+  .ham{display:flex}
+
+  /* HERO */
+  #hero{padding:80px 20px 56px;justify-content:flex-start;padding-top:96px}
+  .hero-top{margin-bottom:2.5rem}
+  .hero-h{font-size:clamp(32px,10vw,48px)}
+  .hero-eyebrow{font-size:8px;gap:10px}
+  .hero-eyebrow::before,.hero-eyebrow::after{width:20px}
+
+  /* CAJA 3D — pequeña y centrada */
+  .scene{width:240px;height:240px;perspective:700px}
+  .face{width:240px;height:240px;padding:20px}
+  .face-front {transform:translateZ(120px)}
+  .face-back  {transform:rotateY(180deg) translateZ(120px)}
+  .face-right {transform:rotateY(90deg)  translateZ(120px)}
+  .face-left  {transform:rotateY(-90deg) translateZ(120px)}
+  .face-top   {transform:rotateX(90deg)  translateZ(120px)}
+  .face-bottom{transform:rotateX(-90deg) translateZ(120px)}
+  .face-word{font-size:22px;margin-bottom:.3rem}
+  .face-word em{font-size:14px}
+  .face-label{font-size:8px;margin-bottom:.4rem}
+  .face-desc{font-size:9px;display:none}
+  .face-arrow{font-size:8px;margin-top:.6rem}
+
+  .box-hint{font-size:8px;margin-top:1rem}
+  .hero-scroll-wrap{left:20px;bottom:24px}
+  .hero-scroll-line{width:32px}
+
+  /* SECCIONES */
+  section{padding:60px 20px}
+  .sec-label{font-size:8px;margin-bottom:1.8rem}
+  .sec-h{font-size:clamp(26px,8vw,40px);margin-bottom:1.2rem}
+
+  /* NOSOTROS */
+  .nos-grid{grid-template-columns:1fr;gap:32px;margin-top:1.5rem}
+  .nos-body p{font-size:12px}
+  .cred{padding:12px 14px}
+  .cred-ico{width:30px;height:30px;font-size:13px}
+  .cred-t{font-size:10px}
+  .cred-s{font-size:9px}
+
+  /* SERVICIOS */
+  .sv-intro{font-size:12px;margin-bottom:2rem}
+  .sv-grid{grid-template-columns:1fr;gap:0}
+  .sv-card{padding:24px 20px}
+  .sv-title{font-size:22px}
+  .sv-desc{font-size:11px}
+
+  /* PORTAFOLIO */
+  .port-grid{grid-template-columns:1fr;gap:12px}
+  .port-card.wide{grid-column:span 1}
+  .port-card.wide .port-img{height:200px}
+  .port-card.wide .port-title{font-size:20px}
+  .port-img{height:180px}
+  .port-title{font-size:18px}
+
+  /* PROCESO */
+  .proc-steps{grid-template-columns:1fr;border-top:.5px solid var(--borde)}
+  .paso{border-right:none;border-bottom:.5px solid var(--borde);padding:20px 0}
+  .paso:last-child{border-bottom:none}
+  .paso-title{font-size:20px}
+  .paso-desc{font-size:11px}
+
+  /* SOLIDARIO */
+  .sol-intro{font-size:12px;margin-bottom:2rem}
+  .sol-grid{grid-template-columns:1fr;gap:0}
+  .sol-card{padding:24px 20px}
+  .sol-casos{margin-top:2rem;padding-top:1.5rem}
+  .sol-caso{gap:12px;padding:14px 0}
+  .sol-caso-t{font-size:12px}
+  .sol-caso-d{font-size:11px}
+
+  /* SECOP */
+  .secop-intro{font-size:12px;margin-bottom:2rem}
+  .s-tabs{flex-wrap:wrap;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .s-tabs::-webkit-scrollbar{display:none}
+  .s-tab{font-size:8px;padding:8px 14px;white-space:nowrap;flex-shrink:0}
+  .s-step{gap:12px;padding:14px 0}
+  .s-box{width:26px;height:26px;font-size:9px;flex-shrink:0}
+  .s-t{font-size:12px}
+  .s-d{font-size:11px}
+  .doc-grid{grid-template-columns:1fr}
+  .doc-i{padding:10px 12px}
+  .alert{padding:12px 14px}
+  .alert-t{font-size:11px}
+
+  /* CONTACTO */
+  .ct-grid{grid-template-columns:1fr;gap:32px;margin-top:1.5rem}
+  .ct-info h3{font-size:22px}
+  .f-group input,.f-group textarea,.f-group select{font-size:13px;padding:10px 12px}
+  .f-row{grid-template-columns:1fr;gap:0}
+  .btn-send{padding:14px;font-size:9px}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:16px;text-align:center;padding:24px 20px}
+  .f-links{flex-wrap:wrap;justify-content:center;gap:12px}
+  .f-links a{font-size:8px}
+  .f-copy{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- MENÚ MÓVIL -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+  <a href="#servicios" onclick="closeMenu()">Servicios</a>
+  <a href="#portafolio" onclick="closeMenu()">Portafolio</a>
+  <a href="#solidario" onclick="closeMenu()">Solidario</a>
+  <a href="#secop" onclick="closeMenu()">SECOP</a>
+  <a href="#contacto" class="mob-cta" onclick="closeMenu()">Contacto →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">chechere <span>arquitectos</span></a>
+  <div class="nav-r">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#solidario">Solidario</a>
+    <a href="#secop">SECOP</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+  </div>
+  <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-top fi">
+    <div class="hero-eyebrow">Bogotá, Colombia · RIBA Part 2 · Est. 2025</div>
+    <h1 class="hero-h">Todo lo que<br>hacemos <em>existe.</em></h1>
+  </div>
+
+  <!-- CAJA 3D -->
+  <div class="scene fi">
+    <div class="box3d" id="box">
+
+      <!-- FRENTE: Portafolio -->
+      <a class="face face-front" href="#portafolio">
+        <div class="face-label">Portafolio</div>
+        <div class="face-word">chechere<em>construido</em></div>
+        <div class="face-desc">El Topo · La Ofi · El Nido · Ángeles en el Manglar</div>
+        <span class="face-arrow">ver proyectos →</span>
+      </a>
+
+      <!-- ATRÁS: Origen -->
+      <a class="face face-back" href="#nosotros">
+        <div class="face-label">Origen</div>
+        <div class="face-word">chechere<em>de dónde vengo</em></div>
+        <div class="face-desc">El apodo, la historia, el nombre que vino de casa</div>
+        <span class="face-arrow">el origen →</span>
+      </a>
+
+      <!-- DERECHA: Servicios -->
+      <a class="face face-right" href="#servicios">
+        <div class="face-label">Servicios</div>
+        <div class="face-word">chechere<em>lo que hago</em></div>
+        <div class="face-desc">Diseño · Obra · Branding · Web</div>
+        <span class="face-arrow">ver servicios →</span>
+      </a>
+
+      <!-- IZQUIERDA: Impacto social -->
+      <a class="face face-left" href="#solidario">
+        <div class="face-label">Impacto</div>
+        <div class="face-word">chechere<em>solidario</em></div>
+        <div class="face-desc">Diseño y arquitectura para el sector social</div>
+        <span class="face-arrow">ver impacto →</span>
+      </a>
+
+      <!-- TAPA: Contacto -->
+      <a class="face face-top" href="#contacto">
+        <div class="face-label">Contacto</div>
+        <div class="face-word">chechere<em>hablemos</em></div>
+        <div class="face-desc">Primera conversación sin costo · Respuesta en 24h</div>
+        <span class="face-arrow">contactar →</span>
+      </a>
+
+      <!-- BASE: SECOP -->
+      <a class="face face-bottom" href="#secop">
+        <div class="face-label">Estado</div>
+        <div class="face-word">chechere<em>que licita</em></div>
+        <div class="face-desc">Contratación pública · SECOP II · Licitaciones</div>
+        <span class="face-arrow">guía SECOP →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <p class="box-hint">Arrastra o mueve el cursor · Cada cara redirecciona</p>
+
+  <div class="hero-scroll-wrap">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- ─── NOSOTROS ─── -->
+<section id="nosotros">
+  <div class="sec-label">Nosotros</div>
+  <h2 class="sec-h fi">Un nombre que<br>vino de <em>casa.</em></h2>
+  <div class="nos-grid">
+    <div class="nos-body fi">
+      <p><strong>Chechere</strong> viene de Checho — así me dice mi mamá. Y en Colombia, un chechere es una cosa: algo tangible, algo que existe en el mundo real. Eso es exactamente lo que hacemos.</p>
+      <p>Somos un estudio versátil con sede en Bogotá, especializado en diseño arquitectónico, gestión BIM, residencia de obra, identidad visual y desarrollo web. Acompañamos a clientes residenciales, institucionales y del sector social desde la idea hasta la entrega final.</p>
+      <p>Detrás de Chechere está <strong>Sergio Calderón</strong> — arquitecto con certificación RIBA Part 2, experiencia en contratación pública y una visión clara: construir cosas con alma, sin importar la escala.</p>
+    </div>
+    <div class="fi">
+      <div class="cred"><div class="cred-ico">R</div><div><div class="cred-t">RIBA Part 2 — Cert. N.° 02352</div><div class="cred-s">Royal Institute of British Architects · Mar. 2025</div></div></div>
+      <div class="cred"><div class="cred-ico">U</div><div><div class="cred-t">Universidad Piloto de Colombia</div><div class="cred-s">Pregrado en Arquitectura · 2019–2023</div></div></div>
+      <div class="cred"><div class="cred-ico">B</div><div><div class="cred-t">Revit · Archicad · Lumion · Twinmotion</div><div class="cred-s">Dominio avanzado — BIM y visualización</div></div></div>
+      <div class="cred"><div class="cred-ico">P</div><div><div class="cred-t">Contratación pública · NSR-10 · POT Bogotá</div><div class="cred-s">Experiencia en proyectos institucionales</div></div></div>
+      <div class="cred"><div class="cred-ico">D</div><div><div class="cred-t">Piloto de Dron certificado</div><div class="cred-s">Levantamientos aéreos y fotogrametría</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICIOS ─── -->
+<section id="servicios">
+  <div class="sec-label">Servicios</div>
+  <h2 class="sec-h fi">Lo que<br><em>construimos.</em></h2>
+  <p class="sv-intro fi">Cuatro líneas de trabajo, un solo interlocutor. Sin subcontratos opacos — Sergio acompaña cada proyecto de principio a fin.</p>
+
+  <div class="sv-grid fi">
+    <div class="sv-card">
+      <div class="sv-num">01 ·</div>
+      <div class="sv-title">Diagnóstico de espacio</div>
+      <div class="sv-price">Desde $150.000 COP</div>
+      <div class="sv-desc">Visita de 1 hora + informe con recomendaciones de distribución, iluminación y materiales. Sin compromiso de obra. Ideal para quienes no saben por dónde empezar.</div>
+      <div class="sv-tags"><span class="sv-tag">Visita presencial</span><span class="sv-tag">Informe PDF</span><span class="sv-tag">3 conceptos</span></div>
+    </div>
+
+    <div class="sv-card">
+      <div class="sv-num">02 ·</div>
+      <div class="sv-title">Diseño + renders</div>
+      <div class="sv-price">Desde $1.200.000 COP</div>
+      <div class="sv-desc">Propuesta conceptual completa con planos técnicos en Revit y renders fotorrealistas en Lumion. Para enamorarte del proyecto antes de construirlo.</div>
+      <div class="sv-tags"><span class="sv-tag">Planos BIM</span><span class="sv-tag">3 renders</span><span class="sv-tag">Memoria</span><span class="sv-tag">2 revisiones</span></div>
+    </div>
+
+    <div class="sv-card featured">
+      <div class="sv-badge">Más solicitado</div>
+      <div class="sv-num">03 ·</div>
+      <div class="sv-title">Proyecto completo</div>
+      <div class="sv-price">Cotización por proyecto</div>
+      <div class="sv-desc">Desde el concepto hasta la entrega de obra. Diseño, documentación técnica, supervisión en sitio, gestión de contratistas y cierre formal. Sin sorpresas.</div>
+      <div class="sv-tags"><span class="sv-tag">Diseño BIM</span><span class="sv-tag">Supervisión</span><span class="sv-tag">Cortes de obra</span><span class="sv-tag">Entrega</span></div>
+    </div>
+
+    <div class="sv-card">
+      <div class="sv-num">04 ·</div>
+      <div class="sv-title">Marca + web para organizaciones</div>
+      <div class="sv-price">Desde $2.500.000 COP</div>
+      <div class="sv-desc">Identidad visual completa + sitio web institucional para fundaciones, ONGs y sector social. Manual de marca, piezas gráficas y web lista para publicar.</div>
+      <div class="sv-tags"><span class="sv-tag">Logotipo</span><span class="sv-tag">Manual</span><span class="sv-tag">Web</span><span class="sv-tag">Redes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTAFOLIO ─── -->
+<section id="portafolio">
+  <div class="sec-label">Portafolio</div>
+  <h2 class="sec-h fi">Proyectos<br><em>realizados.</em></h2>
+  <div class="port-grid fi">
+
+    <div class="port-card wide">
+      <div class="port-img">
+        <div class="port-img-n">01</div>
+        <div class="port-cat">Interior · Destacado</div>
+        <div class="port-year">2024</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">El Topo</div>
+        <div class="port-sub">Espacio interior residencial · Bogotá · Revit + Lumion</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">02</div>
+        <div class="port-cat">Interior</div>
+        <div class="port-year">2024</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">La Ofi</div>
+        <div class="port-sub">Espacio de trabajo · Bogotá</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">03</div>
+        <div class="port-cat">Interior</div>
+        <div class="port-year">2024</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">El Nido</div>
+        <div class="port-sub">Espacio interior · Bogotá</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">04</div>
+        <div class="port-cat">Residencial</div>
+        <div class="port-year">2024</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">Villa Magnolia</div>
+        <div class="port-sub">Proyecto residencial · Bogotá · BIM completo</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">05</div>
+        <div class="port-cat">Urbano</div>
+        <div class="port-year">2024</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">Recuperación Urbana La Unión</div>
+        <div class="port-sub">Intervención urbana · Fómeque</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">06</div>
+        <div class="port-cat">Branding</div>
+        <div class="port-year">2023</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">CID — Corp. Infancia y Desarrollo</div>
+        <div class="port-sub">Identidad visual + web · +15 depts. Colombia</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">07</div>
+        <div class="port-cat">Branding</div>
+        <div class="port-year">2025</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">Ángeles en el Manglar</div>
+        <div class="port-sub">Brandbook + web · Tumaco, Nariño · Alianza ICBF</div>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <div class="port-img-n">08</div>
+        <div class="port-cat">Infraestructura</div>
+        <div class="port-year">2025</div>
+      </div>
+      <div class="port-info">
+        <div class="port-title">Raelja · Policía Nacional</div>
+        <div class="port-sub">Infraestructura institucional · Contratación pública</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PROCESO ─── -->
+<section id="proceso">
+  <div class="sec-label">Cómo trabajamos</div>
+  <h2 class="sec-h fi">El proceso<br><em>Chechere.</em></h2>
+  <div class="proc-steps fi">
+    <div class="paso">
+      <div class="paso-num">01 · Escucha</div>
+      <div class="paso-title">Entender</div>
+      <div class="paso-desc">Primera reunión sin costo. Escuchamos, preguntamos, entendemos el contexto, el presupuesto y los tiempos reales.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02 · Concepto</div>
+      <div class="paso-title">Diseñar</div>
+      <div class="paso-desc">Propuesta conceptual, renders y documentación técnica. Iteramos hasta que el resultado te convenza.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03 · Construcción</div>
+      <div class="paso-title">Ejecutar</div>
+      <div class="paso-desc">Supervisión activa, coordinación de contratistas, control de calidad y presupuesto en tiempo real.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04 · Entrega</div>
+      <div class="paso-title">Cerrar</div>
+      <div class="paso-desc">Entrega formal con toda la documentación. Seguimiento post-obra y disponibilidad para ajustes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOLIDARIO ─── -->
+<section id="solidario">
+  <div class="sec-label">Chechere Solidario</div>
+  <h2 class="sec-h fi">Diseño para<br>quienes más lo <em>necesitan.</em></h2>
+  <p class="sol-intro fi">No es caridad — es propósito. Chechere reserva capacidad para apoyar a organizaciones sociales con tarifas diferenciales o pro bono parcial. A cambio: experiencia acreditable, portafolio de impacto y la satisfacción de construir cosas que transforman vidas.</p>
+
+  <div class="sol-grid fi">
+    <div class="sol-card">
+      <div class="sol-icon">E</div>
+      <div class="sol-title">Espacios comunitarios</div>
+      <div class="sol-desc">Diseño de salones comunales, bibliotecas, jardines infantiles y espacios de atención social. Arquitectura funcional para comunidades reales.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon">I</div>
+      <div class="sol-title">Identidad para fundaciones</div>
+      <div class="sol-desc">Branding completo y web para ONGs y fundaciones con tarifas ajustadas. Ya tenemos dos casos que demuestran que funciona.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon">D</div>
+      <div class="sol-title">Diagnóstico gratuito mensual</div>
+      <div class="sol-desc">Un diagnóstico de espacio al mes para una organización social que lo necesite. Genera contenido real y construye comunidad.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon">A</div>
+      <div class="sol-title">Alianzas con sector público</div>
+      <div class="sol-desc">La experiencia con CID y Ángeles en el Manglar abre la puerta a contratos con ICBF, Minsalud y entidades territoriales.</div>
+    </div>
+  </div>
+
+  <div class="sol-casos fi">
+    <div class="sec-label" style="margin-bottom:1.5rem">Casos de impacto</div>
+    <div class="sol-caso">
+      <div class="sol-caso-num">01 ·</div>
+      <div>
+        <div class="sol-caso-t">Corporación Infancia y Desarrollo — CID</div>
+        <div class="sol-caso-d">Identidad visual completa + sitio web oficial para una organización con presencia en más de 15 departamentos de Colombia. Programas de protección infantil y educación en riesgo de minas.</div>
+      </div>
+    </div>
+    <div class="sol-caso">
+      <div class="sol-caso-num">02 ·</div>
+      <div>
+        <div class="sol-caso-t">Fundación Ángeles en el Manglar — Tumaco, Nariño</div>
+        <div class="sol-caso-d">Brandbook integral + web para fundación aliada con ICBF enfocada en educación inicial, recuperación nutricional y empoderamiento comunitario en el Pacífico colombiano.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECOP ─── -->
+<section id="secop">
+  <div class="sec-label">Contratación pública</div>
+  <h2 class="sec-h fi">Guía para<br>licitar con el <em>Estado.</em></h2>
+  <p class="secop-intro fi">Dos registros clave para participar en licitaciones públicas como Chechere Arquitectos: el RUP en la Cámara de Comercio y la cuenta de proveedor en SECOP II.</p>
+
+  <div class="s-tabs">
+    <button class="s-tab on" onclick="stab('rup',this)">01 · RUP</button>
+    <button class="s-tab" onclick="stab('s2',this)">02 · SECOP II</button>
+    <button class="s-tab" onclick="stab('docs',this)">03 · Documentos</button>
+    <button class="s-tab" onclick="stab('tips',this)">04 · Consejos</button>
+  </div>
+
+  <div class="s-panel on" id="tp-rup">
+    <div class="s-step"><div class="s-box">1</div><div><div class="s-t">Constituir la empresa legalmente</div><div class="s-d">Matrícula mercantil activa en Cámara de Comercio de Bogotá y RUT actualizado ante la DIAN. Puedes iniciar como persona natural — no necesitas crear una empresa para licitar.</div></div></div>
+    <div class="s-step"><div class="s-box">2</div><div><div class="s-t">Solicitar inscripción en el RUP</div><div class="s-d">El Registro Único de Proponentes certifica tu capacidad jurídica, financiera, organizacional y de experiencia ante el Estado. Se tramita en la CCB en línea o presencialmente.<br><a href="https://linea.ccb.org.co/rup/" class="s-link" target="_blank">Ir a CCB en línea →</a></div></div></div>
+    <div class="s-step"><div class="s-box">3</div><div><div class="s-t">Diligenciar el formulario RUES</div><div class="s-d">Completa el Registro Único Empresarial con actividad económica CIIU 7110 (arquitectura e ingeniería) y clasificación UNSPSC de tus servicios. Adjunta experiencia acreditable.</div></div></div>
+    <div class="s-step"><div class="s-box">4</div><div><div class="s-t">Pagar y esperar firmeza</div><div class="s-d">La CCB procesa en máx. 15 días hábiles. El certificado RUP queda en firme a los 10 días hábiles del registro. A partir de ahí puedes presentar ofertas.</div></div></div>
+    <div class="s-step"><div class="s-box">5</div><div><div class="s-t">Renovar antes del 5 de abril cada año</div><div class="s-d">El RUP debe renovarse anualmente. Si no se renueva a tiempo cesan sus efectos y no podrás participar en licitaciones hasta volver a inscribirte.</div></div></div>
+    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Como persona natural</strong> puedes inscribirte en el RUP directamente con tu cédula. No necesitas crear una empresa primero para empezar a licitar.</div></div>
+  </div>
+
+  <div class="s-panel" id="tp-s2">
+    <div class="s-step"><div class="s-box">1</div><div><div class="s-t">Ingresar a SECOP II</div><div class="s-d">Accede a secop2.colombiacompra.gov.co — plataforma oficial obligatoria según Circular 003 de Colombia Compra Eficiente para todos los procesos de contratación pública.<br><a href="https://www.secop2.gov.co" class="s-link" target="_blank">Ir a SECOP II →</a></div></div></div>
+    <div class="s-step"><div class="s-box">2</div><div><div class="s-t">Crear cuenta de usuario proveedor</div><div class="s-d">Haz clic en "Registro". Como persona natural cumples el rol de administrador y proveedor simultáneamente. SECOP II confirma la creación por correo.</div></div></div>
+    <div class="s-step"><div class="s-box">3</div><div><div class="s-t">Crear o vincular cuenta de la empresa</div><div class="s-d">Ingresa NIT, razón social, actividad económica y datos de contacto. Si ya existe una cuenta de tu empresa, solicita acceso al administrador existente.</div></div></div>
+    <div class="s-step"><div class="s-box">4</div><div><div class="s-t">Buscar oportunidades</div><div class="s-d">Filtra procesos por sector (construcción, arquitectura, diseño), ciudad y entidad. Activa alertas para recibir notificaciones de nuevos procesos relevantes.<br><a href="https://consultaprocesos.colombiacompra.gov.co/" class="s-link" target="_blank">Consultar procesos →</a></div></div></div>
+    <div class="s-step"><div class="s-box">5</div><div><div class="s-t">Presentar ofertas en línea</div><div class="s-d">Desde tu cuenta radica observaciones a pliegos, adjunta documentos y hace seguimiento contractual. Todo en línea y en tiempo real. Guarda siempre comprobantes.</div></div></div>
+    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Capacitación gratuita:</strong> Colombia Compra Eficiente ofrece sesiones virtuales mensuales sobre SECOP II para proveedores. Consulta el calendario en colombiacompra.gov.co.</div></div>
+  </div>
+
+  <div class="s-panel" id="tp-docs">
+    <p style="font-size:12px;color:var(--m);margin-bottom:1.2rem">Documentos clave para inscripción y licitaciones:</p>
+    <div class="doc-grid">
+      <div class="doc-i"><div class="doc-ico">C</div><div class="doc-txt"><strong>Cédula de ciudadanía</strong>Con marca de agua "solo válido para SECOP II"</div></div>
+      <div class="doc-i"><div class="doc-ico">R</div><div class="doc-txt"><strong>RUT actualizado</strong>DIAN · Actividad económica CIIU 7110</div></div>
+      <div class="doc-i"><div class="doc-ico">M</div><div class="doc-txt"><strong>Matrícula mercantil</strong>Certificado de existencia vigente</div></div>
+      <div class="doc-i"><div class="doc-ico">F</div><div class="doc-txt"><strong>Estados financieros</strong>A 31 dic. del año anterior, firmados por RL</div></div>
+      <div class="doc-i"><div class="doc-ico">P</div><div class="doc-txt"><strong>Declaración de parafiscales</strong>Salud, pensión y ARL al día</div></div>
+      <div class="doc-i"><div class="doc-ico">E</div><div class="doc-txt"><strong>Certificados de experiencia</strong>Actas de contratos pasados (Mandarina, Raelja)</div></div>
+      <div class="doc-i"><div class="doc-ico">T</div><div class="doc-txt"><strong>Tarjeta profesional</strong>Matrícula de arquitecto vigente (SCA/COPNIA)</div></div>
+      <div class="doc-i"><div class="doc-ico">B</div><div class="doc-txt"><strong>Certificación bancaria</strong>Cuenta activa a nombre de la empresa</div></div>
+    </div>
+    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Tarjeta profesional:</strong> Para contratos de arquitectura y obra, las entidades exigen matrícula profesional vigente. Verifica que la tuya esté activa en la SCA o COPNIA.</div></div>
+  </div>
+
+  <div class="s-panel" id="tp-tips">
+    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Empieza por contratos de menor cuantía</div><div class="s-d">Mínima y menor cuantía tienen menos requisitos y son la mejor forma de ganar experiencia acreditable. Busca diseño, consultorías y estudios técnicos pequeños.</div></div></div>
+    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Acredita con proyectos pasados</div><div class="s-d">Tus contratos en Mandarina, Raelja y Kakto son experiencia acreditable. Solicita certificaciones — incluso proyectos privados sirven con carta de la empresa y actas.</div></div></div>
+    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Considera consorcio o unión temporal</div><div class="s-d">Si un proceso requiere más experiencia o capital, asóciate con otra empresa. Permite acceder a contratos más grandes desde el inicio sin esperar años.</div></div></div>
+    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Lee los pliegos completos siempre</div><div class="s-d">Los pliegos tienen todos los requisitos habilitantes. Léelos antes de decidir si presentas — muchos procesos excluyen automáticamente sin que te des cuenta.</div></div></div>
+    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Activa alertas en SECOP II</div><div class="s-d">Configura alertas por palabras clave: arquitectura, diseño arquitectónico, interventoría, branding institucional. Sé el primero en ver cada oportunidad.</div></div></div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section id="contacto">
+  <div class="sec-label">Contacto</div>
+  <h2 class="sec-h fi">Hablemos<br>de tu <em>proyecto.</em></h2>
+  <div class="ct-grid">
+    <div class="fi">
+      <h3>La primera<br>conversación no tiene costo.</h3>
+      <div class="ct-item"><span class="ct-label">Email</span><span class="ct-val">Sergioancalpe@gmail.com</span></div>
+      <div class="ct-item"><span class="ct-label">Teléfono</span><span class="ct-val">+57 318 213 4982</span></div>
+      <div class="ct-item"><span class="ct-label">Ciudad</span><span class="ct-val">Bogotá, Colombia</span></div>
+      <div class="ct-item"><span class="ct-label">Instagram</span><span class="ct-val">@checherearquitectos</span></div>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:.5px solid var(--borde)">
+        <p style="font-size:11px;color:var(--m);line-height:1.85">Respondemos en menos de 24 horas.<br>Disponibles para proyectos en Bogotá y alrededores.<br>Atención a organizaciones sociales con tarifas diferenciales.</p>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="f-row">
+        <div class="f-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div class="f-group"><label>Correo</label><input type="email" placeholder="tu@correo.com"></div>
+      </div>
+      <div class="f-group"><label>Tipo de proyecto</label>
+        <select>
+          <option value="">Selecciona...</option>
+          <option>Diagnóstico de espacio</option>
+          <option>Diseño arquitectónico + renders</option>
+          <option>Proyecto completo (diseño + obra)</option>
+          <option>Identidad de marca + web</option>
+          <option>Licitación pública / SECOP</option>
+          <option>Organización social / Chechere Solidario</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="f-group"><label>Tu proyecto</label><textarea placeholder="Cuéntanos qué necesitas, dónde está el proyecto y tu presupuesto aproximado..."></textarea></div>
+      <button class="btn-send" onclick="enviar(this)">Enviar mensaje →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <a href="#hero" class="f-logo">chechere <span>arquitectos</span></a>
+  <div class="f-links">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#solidario">Solidario</a>
+    <a href="#secop">SECOP</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="f-copy">© 2025 Chechere Arquitectos · Bogotá</div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let cx=0,cy=0,cx2=0,cy2=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;cur.style.left=cx+'px';cur.style.top=cy+'px'});
+(function loop(){cx2+=(cx-cx2)*.18;cy2+=(cy-cy2)*.18;cur2.style.left=cx2+'px';cur2.style.top=cy2+'px';requestAnimationFrame(loop)})();
+
+/* CAJA 3D — rotación libre 360° en todas direcciones */
+const box=document.getElementById('box');
+const hero=document.getElementById('hero');
+
+/* estado de rotación acumulada (quaternion-like via euler continuo) */
+let rotX=-18,rotY=28;          // rotación actual mostrada
+let targetX=-18,targetY=28;   // objetivo suave
+let velX=0,velY=0;             // inercia al soltar
+let dragging=false;
+let lastMx=0,lastMy=0;
+let autoAngle=28;               // para auto-rotación
+let autoActive=true;
+let rafId;
+
+function applyRot(){
+  box.style.transform=`rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+}
+
+/* ── AUTO-ROTACIÓN + SEGUIMIENTO DE MOUSE (sin click) ── */
+hero.addEventListener('mousemove',e=>{
+  if(dragging) return;
+  const r=hero.getBoundingClientRect();
+  /* normalizado -1..1 desde el centro del hero */
+  const nx=(e.clientX-r.left-r.width/2)/(r.width/2);
+  const ny=(e.clientY-r.top-r.height/2)/(r.height/2);
+  /* mapear a rotación completa: ±180° en Y, ±90° en X */
+  targetY=autoAngle+nx*180;
+  targetX=-ny*90;
+  autoActive=false;
+  clearTimeout(box._idleTimer);
+  /* si el mouse sale del hero, retomar auto-rotación */
+  box._idleTimer=setTimeout(()=>{autoActive=true},3000);
+});
+
+hero.addEventListener('mouseleave',()=>{
+  if(!dragging) autoActive=true;
+});
+
+/* ── ARRASTRE LIBRE 360° ── */
+hero.addEventListener('mousedown',e=>{
+  dragging=true;
+  autoActive=false;
+  lastMx=e.clientX;
+  lastMy=e.clientY;
+  velX=0;velY=0;
+  e.preventDefault();
+});
+
+document.addEventListener('mousemove',e=>{
+  if(!dragging) return;
+  const dx=e.clientX-lastMx;
+  const dy=e.clientY-lastMy;
+  velY=dx*.6;
+  velX=-dy*.6;
+  rotY+=dx*.55;   /* libre, sin límite */
+  rotX+=(-dy*.55);
+  targetX=rotX;
+  targetY=rotY;
+  lastMx=e.clientX;
+  lastMy=e.clientY;
+  applyRot();
+});
+
+document.addEventListener('mouseup',()=>{
+  if(!dragging) return;
+  dragging=false;
+  inertia();
+});
+
+/* ── TOUCH ── */
+hero.addEventListener('touchstart',e=>{
+  const t=e.touches[0];
+  dragging=true;autoActive=false;
+  lastMx=t.clientX;lastMy=t.clientY;
+  velX=0;velY=0;
+},{passive:true});
+
+document.addEventListener('touchmove',e=>{
+  if(!dragging) return;
+  const t=e.touches[0];
+  const dx=t.clientX-lastMx;
+  const dy=t.clientY-lastMy;
+  velY=dx*.6;velX=-dy*.6;
+  rotY+=dx*.55;rotX+=(-dy*.55);
+  targetX=rotX;targetY=rotY;
+  lastMx=t.clientX;lastMy=t.clientY;
+  applyRot();
+},{passive:true});
+
+document.addEventListener('touchend',()=>{
+  if(!dragging) return;
+  dragging=false;
+  inertia();
+});
+
+/* ── INERCIA ── */
+function inertia(){
+  cancelAnimationFrame(rafId);
+  (function step(){
+    velX*=.92;velY*=.92;
+    rotX+=velX;rotY+=velY;
+    targetX=rotX;targetY=rotY;
+    applyRot();
+    if(Math.abs(velX)>.05||Math.abs(velY)>.05){
+      rafId=requestAnimationFrame(step);
+    } else {
+      autoActive=true;
+      startLoop();
+    }
+  })();
+}
+
+/* ── LOOP PRINCIPAL (auto-rotación + lerp suave hacia target) ── */
+function startLoop(){
+  cancelAnimationFrame(rafId);
+  (function loop(){
+    if(autoActive){
+      autoAngle+=.3;
+      targetY=autoAngle;
+      targetX+=(0-targetX)*.02; /* vuelve suave a horizontal */
+    }
+    if(!dragging){
+      rotX+=(targetX-rotX)*.08;
+      rotY+=(targetY-rotY)*.08;
+      applyRot();
+    }
+    rafId=requestAnimationFrame(loop);
+  })();
+}
+
+/* quitar CSS animation — la controlamos en JS */
+box.style.animation='none';
+box.style.transition='none';
+startLoop();
+
+/* HAMBURGER */
+function toggleMenu(){
+  const m=document.getElementById('mobMenu'),h=document.getElementById('ham');
+  m.classList.toggle('open');h.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  const m=document.getElementById('mobMenu'),h=document.getElementById('ham');
+  m.classList.remove('open');h.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* TABS SECOP */
+function stab(id,el){
+  document.querySelectorAll('.s-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.s-tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tp-'+id).classList.add('on');
+  el.classList.add('on');
+}
+
+/* FADE IN SCROLL */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+/* trigger hero immediately */
+document.querySelectorAll('#hero .fi').forEach(el=>el.classList.add('v'));
+
+/* FORMULARIO */
+function enviar(btn){btn.textContent='Mensaje enviado ✓';btn.style.background='#1a3a1a';btn.style.color='#9fe1cb';setTimeout(()=>{btn.textContent='Enviar mensaje →';btn.style.background='';btn.style.color=''},3500)}
+</script>
+</body>
+</html>

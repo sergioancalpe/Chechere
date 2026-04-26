@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chechere Arquitectos — Estudio de arquitectura, diseño BIM y branding en Bogotá. RIBA Part 2. Diseño arquitectónico, gestión de obra, identidad visual y contratación pública.">
+  <meta property="og:title" content="Chechere Arquitectos — Bogotá">
+  <meta property="og:description" content="Todo lo que hacemos existe. Diseño arquitectónico, BIM, obra, branding y contratación pública en Colombia.">
+  <meta property="og:type" content="website">
+  <title>Chechere Arquitectos — Bogotá</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+<div id="cur" aria-hidden="true"></div>
+<div id="cur2" aria-hidden="true"></div>
+
+<!-- MENÚ MÓVIL -->
+<div class="mob-menu" id="mobMenu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#portafolio">Portafolio</a>
+  <a href="#solidario">Solidario</a>
+  <a href="#secop">SECOP</a>
+  <a href="#contacto" class="mob-cta">Contacto →</a>
+</div>
+
+<!-- NAV -->
+<nav aria-label="Navegación principal">
+  <a href="#hero" class="logo">chechere <span>arquitectos</span></a>
+  <div class="nav-r">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#solidario">Solidario</a>
+    <a href="#secop">SECOP</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+  </div>
+  <button class="ham" id="ham" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero" aria-label="Inicio">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+
+  <div class="hero-top fi">
+    <div class="hero-eyebrow">Bogotá, Colombia · RIBA Part 2 · Est. 2025</div>
+    <h1 class="hero-h">Todo lo que<br>hacemos <em>existe.</em></h1>
+  </div>
+
+  <!-- CAJA 3D -->
+  <div class="scene fi" aria-label="Cubo interactivo. Arrastra para explorar las secciones.">
+    <div class="box3d" id="box" role="navigation" aria-label="Navegación por secciones">
+
+      <a class="face face-front" href="#portafolio">
+        <div class="face-label">Portafolio</div>
+        <div class="face-word">chechere<em>construido</em></div>
+        <div class="face-desc">El Topo · La Ofi · El Nido · Ángeles en el Manglar</div>
+        <span class="face-arrow">ver proyectos →</span>
+      </a>
+
+      <a class="face face-back" href="#nosotros">
+        <div class="face-label">Origen</div>
+        <div class="face-word">chechere<em>de dónde vengo</em></div>
+        <div class="face-desc">El apodo, la historia, el nombre que vino de casa</div>
+        <span class="face-arrow">el origen →</span>
+      </a>
+
+      <a class="face face-right" href="#servicios">
+        <div class="face-label">Servicios</div>
+        <div class="face-word">chechere<em>lo que hago</em></div>
+        <div class="face-desc">Diseño · Obra · Branding · Web</div>
+        <span class="face-arrow">ver servicios →</span>
+      </a>
+
+      <a class="face face-left" href="#solidario">
+        <div class="face-label">Impacto</div>
+        <div class="face-word">chechere<em>solidario</em></div>
+        <div class="face-desc">Diseño y arquitectura para el sector social</div>
+        <span class="face-arrow">ver impacto →</span>
+      </a>
+
+      <a class="face face-top" href="#contacto">
+        <div class="face-label">Contacto</div>
+        <div class="face-word">chechere<em>hablemos</em></div>
+        <div class="face-desc">Primera conversación sin costo · Respuesta en 24h</div>
+        <span class="face-arrow">contactar →</span>
+      </a>
+
+      <a class="face face-bottom" href="#secop">
+        <div class="face-label">Estado</div>
+        <div class="face-word">chechere<em>que licita</em></div>
+        <div class="face-desc">Contratación pública · SECOP II · Licitaciones</div>
+        <span class="face-arrow">guía SECOP →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <p class="box-hint" aria-hidden="true">Arrastra o mueve el cursor · Cada cara redirecciona</p>
+
+  <div class="hero-scroll-wrap" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- ─── NOSOTROS ─── -->
+<section id="nosotros" aria-labelledby="nosotros-heading">
+  <div class="sec-label" aria-hidden="true">Nosotros</div>
+  <h2 id="nosotros-heading" class="sec-h fi">Un nombre que<br>vino de <em>casa.</em></h2>
+  <div class="nos-grid">
+    <div class="nos-body fi">
+      <p><strong>Chechere</strong> viene de Checho — así me dice mi mamá. Y en Colombia, un chechere es una cosa: algo tangible, algo que existe en el mundo real. Eso es exactamente lo que hacemos.</p>
+      <p>Somos un estudio versátil con sede en Bogotá, especializado en diseño arquitectónico, gestión BIM, residencia de obra, identidad visual y desarrollo web. Acompañamos a clientes residenciales, institucionales y del sector social desde la idea hasta la entrega final.</p>
+      <p>Detrás de Chechere está <strong>Sergio Calderón</strong> — arquitecto con certificación RIBA Part 2, experiencia en contratación pública y una visión clara: construir cosas con alma, sin importar la escala.</p>
+    </div>
+    <div class="fi" aria-label="Credenciales profesionales">
+      <div class="cred">
+        <div class="cred-ico" aria-hidden="true">R</div>
+        <div>
+          <div class="cred-t">RIBA Part 2 — Cert. N.° 02352</div>
+          <div class="cred-s">Royal Institute of British Architects · Mar. 2025</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico" aria-hidden="true">U</div>
+        <div>
+          <div class="cred-t">Universidad Piloto de Colombia</div>
+          <div class="cred-s">Pregrado en Arquitectura · 2019–2023</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico" aria-hidden="true">B</div>
+        <div>
+          <div class="cred-t">Revit · Archicad · Lumion · Twinmotion</div>
+          <div class="cred-s">Dominio avanzado — BIM y visualización</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico" aria-hidden="true">P</div>
+        <div>
+          <div class="cred-t">Contratación pública · NSR-10 · POT Bogotá</div>
+          <div class="cred-s">Experiencia en proyectos institucionales</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico" aria-hidden="true">D</div>
+        <div>
+          <div class="cred-t">Piloto de Dron certificado</div>
+          <div class="cred-s">Levantamientos aéreos y fotogrametría</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICIOS ─── -->
+<section id="servicios" aria-labelledby="servicios-heading">
+  <div class="sec-label" aria-hidden="true">Servicios</div>
+  <h2 id="servicios-heading" class="sec-h fi">Lo que<br><em>construimos.</em></h2>
+  <p class="sv-intro fi">Cuatro líneas de trabajo, un solo interlocutor. Sin subcontratos opacos — Sergio acompaña cada proyecto de principio a fin.</p>
+
+  <div class="sv-grid fi">
+    <div class="sv-card">
+      <div class="sv-num" aria-hidden="true">01 ·</div>
+      <h3 class="sv-title">Diagnóstico de espacio</h3>
+      <div class="sv-price">Desde $150.000 COP</div>
+      <p class="sv-desc">Visita de 1 hora + informe con recomendaciones de distribución, iluminación y materiales. Sin compromiso de obra. Ideal para quienes no saben por dónde empezar.</p>
+      <div class="sv-tags" aria-label="Incluye">
+        <span class="sv-tag">Visita presencial</span>
+        <span class="sv-tag">Informe PDF</span>
+        <span class="sv-tag">3 conceptos</span>
+      </div>
+    </div>
+
+    <div class="sv-card">
+      <div class="sv-num" aria-hidden="true">02 ·</div>
+      <h3 class="sv-title">Diseño + renders</h3>
+      <div class="sv-price">Desde $1.200.000 COP</div>
+      <p class="sv-desc">Propuesta conceptual completa con planos técnicos en Revit y renders fotorrealistas en Lumion. Para enamorarte del proyecto antes de construirlo.</p>
+      <div class="sv-tags" aria-label="Incluye">
+        <span class="sv-tag">Planos BIM</span>
+        <span class="sv-tag">3 renders</span>
+        <span class="sv-tag">Memoria</span>
+        <span class="sv-tag">2 revisiones</span>
+      </div>
+    </div>
+
+    <div class="sv-card featured">
+      <div class="sv-badge">Más solicitado</div>
+      <div class="sv-num" aria-hidden="true">03 ·</div>
+      <h3 class="sv-title">Proyecto completo</h3>
+      <div class="sv-price">Cotización por proyecto</div>
+      <p class="sv-desc">Desde el concepto hasta la entrega de obra. Diseño, documentación técnica, supervisión en sitio, gestión de contratistas y cierre formal. Sin sorpresas.</p>
+      <div class="sv-tags" aria-label="Incluye">
+        <span class="sv-tag">Diseño BIM</span>
+        <span class="sv-tag">Supervisión</span>
+        <span class="sv-tag">Cortes de obra</span>
+        <span class="sv-tag">Entrega</span>
+      </div>
+    </div>
+
+    <div class="sv-card">
+      <div class="sv-num" aria-hidden="true">04 ·</div>
+      <h3 class="sv-title">Marca + web para organizaciones</h3>
+      <div class="sv-price">Desde $2.500.000 COP</div>
+      <p class="sv-desc">Identidad visual completa + sitio web institucional para fundaciones, ONGs y sector social. Manual de marca, piezas gráficas y web lista para publicar.</p>
+      <div class="sv-tags" aria-label="Incluye">
+        <span class="sv-tag">Logotipo</span>
+        <span class="sv-tag">Manual</span>
+        <span class="sv-tag">Web</span>
+        <span class="sv-tag">Redes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTAFOLIO ─── -->
+<section id="portafolio" aria-labelledby="portafolio-heading">
+  <div class="sec-label" aria-hidden="true">Portafolio</div>
+  <h2 id="portafolio-heading" class="sec-h fi">Proyectos<br><em>realizados.</em></h2>
+  <div class="port-grid fi">
+
+    <article class="port-card wide">
+      <div class="port-img">
+        <img src="/images/portfolio/el-topo/cover.jpg" alt="El Topo — Espacio interior residencial en Bogotá" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">01</span>
+        <span class="port-cat">Interior · Destacado</span>
+        <span class="port-year">2024</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">El Topo</h3>
+        <p class="port-sub">Espacio interior residencial · Bogotá · Revit + Lumion</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/la-ofi/cover.jpg" alt="La Ofi — Espacio de trabajo en Bogotá" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">02</span>
+        <span class="port-cat">Interior</span>
+        <span class="port-year">2024</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">La Ofi</h3>
+        <p class="port-sub">Espacio de trabajo · Bogotá</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/el-nido/cover.jpg" alt="El Nido — Espacio interior en Bogotá" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">03</span>
+        <span class="port-cat">Interior</span>
+        <span class="port-year">2024</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">El Nido</h3>
+        <p class="port-sub">Espacio interior · Bogotá</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/villa-magnolia/cover.jpg" alt="Villa Magnolia — Proyecto residencial en Bogotá" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">04</span>
+        <span class="port-cat">Residencial</span>
+        <span class="port-year">2024</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">Villa Magnolia</h3>
+        <p class="port-sub">Proyecto residencial · Bogotá · BIM completo</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/recuperacion-urbana-la-union/cover.jpg" alt="Recuperación Urbana La Unión — Intervención urbana en Fómeque" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">05</span>
+        <span class="port-cat">Urbano</span>
+        <span class="port-year">2024</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">Recuperación Urbana La Unión</h3>
+        <p class="port-sub">Intervención urbana · Fómeque</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/cid/cover.jpg" alt="CID Corporación Infancia y Desarrollo — Identidad visual" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">06</span>
+        <span class="port-cat">Branding</span>
+        <span class="port-year">2023</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">CID — Corp. Infancia y Desarrollo</h3>
+        <p class="port-sub">Identidad visual + web · +15 depts. Colombia</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/angeles-en-el-manglar/cover.jpg" alt="Ángeles en el Manglar — Brandbook y web para Tumaco" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">07</span>
+        <span class="port-cat">Branding</span>
+        <span class="port-year">2025</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">Ángeles en el Manglar</h3>
+        <p class="port-sub">Brandbook + web · Tumaco, Nariño · Alianza ICBF</p>
+      </div>
+    </article>
+
+    <article class="port-card">
+      <div class="port-img">
+        <img src="/images/portfolio/raelja/cover.jpg" alt="Raelja Policía Nacional — Infraestructura institucional" loading="lazy" class="port-img-photo">
+        <span class="port-img-n" aria-hidden="true">08</span>
+        <span class="port-cat">Infraestructura</span>
+        <span class="port-year">2025</span>
+      </div>
+      <div class="port-info">
+        <h3 class="port-title">Raelja · Policía Nacional</h3>
+        <p class="port-sub">Infraestructura institucional · Contratación pública</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─── PROCESO ─── -->
+<section id="proceso" aria-labelledby="proceso-heading">
+  <div class="sec-label" aria-hidden="true">Cómo trabajamos</div>
+  <h2 id="proceso-heading" class="sec-h fi">El proceso<br><em>Chechere.</em></h2>
+  <ol class="proc-steps fi" aria-label="Proceso de trabajo">
+    <li class="paso">
+      <div class="paso-num" aria-hidden="true">01 · Escucha</div>
+      <h3 class="paso-title">Entender</h3>
+      <p class="paso-desc">Primera reunión sin costo. Escuchamos, preguntamos, entendemos el contexto, el presupuesto y los tiempos reales.</p>
+    </li>
+    <li class="paso">
+      <div class="paso-num" aria-hidden="true">02 · Concepto</div>
+      <h3 class="paso-title">Diseñar</h3>
+      <p class="paso-desc">Propuesta conceptual, renders y documentación técnica. Iteramos hasta que el resultado te convenza.</p>
+    </li>
+    <li class="paso">
+      <div class="paso-num" aria-hidden="true">03 · Construcción</div>
+      <h3 class="paso-title">Ejecutar</h3>
+      <p class="paso-desc">Supervisión activa, coordinación de contratistas, control de calidad y presupuesto en tiempo real.</p>
+    </li>
+    <li class="paso">
+      <div class="paso-num" aria-hidden="true">04 · Entrega</div>
+      <h3 class="paso-title">Cerrar</h3>
+      <p class="paso-desc">Entrega formal con toda la documentación. Seguimiento post-obra y disponibilidad para ajustes.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ─── SOLIDARIO ─── -->
+<section id="solidario" aria-labelledby="solidario-heading">
+  <div class="sec-label" aria-hidden="true">Chechere Solidario</div>
+  <h2 id="solidario-heading" class="sec-h fi">Diseño para<br>quienes más lo <em>necesitan.</em></h2>
+  <p class="sol-intro fi">No es caridad — es propósito. Chechere reserva capacidad para apoyar a organizaciones sociales con tarifas diferenciales o pro bono parcial. A cambio: experiencia acreditable, portafolio de impacto y la satisfacción de construir cosas que transforman vidas.</p>
+
+  <div class="sol-grid fi">
+    <div class="sol-card">
+      <div class="sol-icon" aria-hidden="true">E</div>
+      <h3 class="sol-title">Espacios comunitarios</h3>
+      <p class="sol-desc">Diseño de salones comunales, bibliotecas, jardines infantiles y espacios de atención social. Arquitectura funcional para comunidades reales.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon" aria-hidden="true">I</div>
+      <h3 class="sol-title">Identidad para fundaciones</h3>
+      <p class="sol-desc">Branding completo y web para ONGs y fundaciones con tarifas ajustadas. Ya tenemos dos casos que demuestran que funciona.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon" aria-hidden="true">D</div>
+      <h3 class="sol-title">Diagnóstico gratuito mensual</h3>
+      <p class="sol-desc">Un diagnóstico de espacio al mes para una organización social que lo necesite. Genera contenido real y construye comunidad.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon" aria-hidden="true">A</div>
+      <h3 class="sol-title">Alianzas con sector público</h3>
+      <p class="sol-desc">La experiencia con CID y Ángeles en el Manglar abre la puerta a contratos con ICBF, Minsalud y entidades territoriales.</p>
+    </div>
+  </div>
+
+  <div class="sol-casos fi">
+    <div class="sec-label sec-label--casos" aria-hidden="true">Casos de impacto</div>
+    <article class="sol-caso">
+      <div class="sol-caso-num" aria-hidden="true">01 ·</div>
+      <div>
+        <h3 class="sol-caso-t">Corporación Infancia y Desarrollo — CID</h3>
+        <p class="sol-caso-d">Identidad visual completa + sitio web oficial para una organización con presencia en más de 15 departamentos de Colombia. Programas de protección infantil y educación en riesgo de minas.</p>
+      </div>
+    </article>
+    <article class="sol-caso">
+      <div class="sol-caso-num" aria-hidden="true">02 ·</div>
+      <div>
+        <h3 class="sol-caso-t">Fundación Ángeles en el Manglar — Tumaco, Nariño</h3>
+        <p class="sol-caso-d">Brandbook integral + web para fundación aliada con ICBF enfocada en educación inicial, recuperación nutricional y empoderamiento comunitario en el Pacífico colombiano.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ─── SECOP ─── -->
+<section id="secop" aria-labelledby="secop-heading">
+  <div class="sec-label" aria-hidden="true">Contratación pública</div>
+  <h2 id="secop-heading" class="sec-h fi">Guía para<br>licitar con el <em>Estado.</em></h2>
+  <p class="secop-intro fi">Dos registros clave para participar en licitaciones públicas como Chechere Arquitectos: el RUP en la Cámara de Comercio y la cuenta de proveedor en SECOP II.</p>
+
+  <div class="s-tabs" role="tablist" aria-label="Guía SECOP">
+    <button class="s-tab on" role="tab" aria-selected="true" aria-controls="tp-rup" data-tab="rup" id="tab-rup">01 · RUP</button>
+    <button class="s-tab" role="tab" aria-selected="false" aria-controls="tp-s2" data-tab="s2" id="tab-s2">02 · SECOP II</button>
+    <button class="s-tab" role="tab" aria-selected="false" aria-controls="tp-docs" data-tab="docs" id="tab-docs">03 · Documentos</button>
+    <button class="s-tab" role="tab" aria-selected="false" aria-controls="tp-tips" data-tab="tips" id="tab-tips">04 · Consejos</button>
+  </div>
+
+  <div class="s-panel on" id="tp-rup" role="tabpanel" aria-labelledby="tab-rup">
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">1</div>
+      <div>
+        <h3 class="s-t">Constituir la empresa legalmente</h3>
+        <p class="s-d">Matrícula mercantil activa en Cámara de Comercio de Bogotá y RUT actualizado ante la DIAN. Puedes iniciar como persona natural — no necesitas crear una empresa para licitar.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">2</div>
+      <div>
+        <h3 class="s-t">Solicitar inscripción en el RUP</h3>
+        <p class="s-d">El Registro Único de Proponentes certifica tu capacidad jurídica, financiera, organizacional y de experiencia ante el Estado. Se tramita en la CCB en línea o presencialmente.<br><a href="https://linea.ccb.org.co/rup/" class="s-link" target="_blank" rel="noopener noreferrer">Ir a CCB en línea →</a></p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">3</div>
+      <div>
+        <h3 class="s-t">Diligenciar el formulario RUES</h3>
+        <p class="s-d">Completa el Registro Único Empresarial con actividad económica CIIU 7110 (arquitectura e ingeniería) y clasificación UNSPSC de tus servicios. Adjunta experiencia acreditable.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">4</div>
+      <div>
+        <h3 class="s-t">Pagar y esperar firmeza</h3>
+        <p class="s-d">La CCB procesa en máx. 15 días hábiles. El certificado RUP queda en firme a los 10 días hábiles del registro. A partir de ahí puedes presentar ofertas.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">5</div>
+      <div>
+        <h3 class="s-t">Renovar antes del 5 de abril cada año</h3>
+        <p class="s-d">El RUP debe renovarse anualmente. Si no se renueva a tiempo cesan sus efectos y no podrás participar en licitaciones hasta volver a inscribirte.</p>
+      </div>
+    </div>
+    <div class="alert" role="note">
+      <span class="alert-i" aria-hidden="true">!</span>
+      <p class="alert-t"><strong>Como persona natural</strong> puedes inscribirte en el RUP directamente con tu cédula. No necesitas crear una empresa primero para empezar a licitar.</p>
+    </div>
+  </div>
+
+  <div class="s-panel" id="tp-s2" role="tabpanel" aria-labelledby="tab-s2" hidden>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">1</div>
+      <div>
+        <h3 class="s-t">Ingresar a SECOP II</h3>
+        <p class="s-d">Accede a secop2.colombiacompra.gov.co — plataforma oficial obligatoria según Circular 003 de Colombia Compra Eficiente para todos los procesos de contratación pública.<br><a href="https://www.secop2.gov.co" class="s-link" target="_blank" rel="noopener noreferrer">Ir a SECOP II →</a></p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">2</div>
+      <div>
+        <h3 class="s-t">Crear cuenta de usuario proveedor</h3>
+        <p class="s-d">Haz clic en "Registro". Como persona natural cumples el rol de administrador y proveedor simultáneamente. SECOP II confirma la creación por correo.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">3</div>
+      <div>
+        <h3 class="s-t">Crear o vincular cuenta de la empresa</h3>
+        <p class="s-d">Ingresa NIT, razón social, actividad económica y datos de contacto. Si ya existe una cuenta de tu empresa, solicita acceso al administrador existente.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">4</div>
+      <div>
+        <h3 class="s-t">Buscar oportunidades</h3>
+        <p class="s-d">Filtra procesos por sector (construcción, arquitectura, diseño), ciudad y entidad. Activa alertas para recibir notificaciones de nuevos procesos relevantes.<br><a href="https://consultaprocesos.colombiacompra.gov.co/" class="s-link" target="_blank" rel="noopener noreferrer">Consultar procesos →</a></p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">5</div>
+      <div>
+        <h3 class="s-t">Presentar ofertas en línea</h3>
+        <p class="s-d">Desde tu cuenta radica observaciones a pliegos, adjunta documentos y hace seguimiento contractual. Todo en línea y en tiempo real. Guarda siempre comprobantes.</p>
+      </div>
+    </div>
+    <div class="alert" role="note">
+      <span class="alert-i" aria-hidden="true">!</span>
+      <p class="alert-t"><strong>Capacitación gratuita:</strong> Colombia Compra Eficiente ofrece sesiones virtuales mensuales sobre SECOP II para proveedores. Consulta el calendario en colombiacompra.gov.co.</p>
+    </div>
+  </div>
+
+  <div class="s-panel" id="tp-docs" role="tabpanel" aria-labelledby="tab-docs" hidden>
+    <p class="s-panel-intro">Documentos clave para inscripción y licitaciones:</p>
+    <div class="doc-grid">
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">C</div>
+        <div class="doc-txt"><strong>Cédula de ciudadanía</strong>Con marca de agua "solo válido para SECOP II"</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">R</div>
+        <div class="doc-txt"><strong>RUT actualizado</strong>DIAN · Actividad económica CIIU 7110</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">M</div>
+        <div class="doc-txt"><strong>Matrícula mercantil</strong>Certificado de existencia vigente</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">F</div>
+        <div class="doc-txt"><strong>Estados financieros</strong>A 31 dic. del año anterior, firmados por RL</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">P</div>
+        <div class="doc-txt"><strong>Declaración de parafiscales</strong>Salud, pensión y ARL al día</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">E</div>
+        <div class="doc-txt"><strong>Certificados de experiencia</strong>Actas de contratos pasados (Mandarina, Raelja)</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">T</div>
+        <div class="doc-txt"><strong>Tarjeta profesional</strong>Matrícula de arquitecto vigente (SCA/COPNIA)</div>
+      </div>
+      <div class="doc-i">
+        <div class="doc-ico" aria-hidden="true">B</div>
+        <div class="doc-txt"><strong>Certificación bancaria</strong>Cuenta activa a nombre de la empresa</div>
+      </div>
+    </div>
+    <div class="alert" role="note">
+      <span class="alert-i" aria-hidden="true">!</span>
+      <p class="alert-t"><strong>Tarjeta profesional:</strong> Para contratos de arquitectura y obra, las entidades exigen matrícula profesional vigente. Verifica que la tuya esté activa en la SCA o COPNIA.</p>
+    </div>
+  </div>
+
+  <div class="s-panel" id="tp-tips" role="tabpanel" aria-labelledby="tab-tips" hidden>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">→</div>
+      <div>
+        <h3 class="s-t">Empieza por contratos de menor cuantía</h3>
+        <p class="s-d">Mínima y menor cuantía tienen menos requisitos y son la mejor forma de ganar experiencia acreditable. Busca diseño, consultorías y estudios técnicos pequeños.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">→</div>
+      <div>
+        <h3 class="s-t">Acredita con proyectos pasados</h3>
+        <p class="s-d">Tus contratos en Mandarina, Raelja y Kakto son experiencia acreditable. Solicita certificaciones — incluso proyectos privados sirven con carta de la empresa y actas.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">→</div>
+      <div>
+        <h3 class="s-t">Considera consorcio o unión temporal</h3>
+        <p class="s-d">Si un proceso requiere más experiencia o capital, asóciate con otra empresa. Permite acceder a contratos más grandes desde el inicio sin esperar años.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">→</div>
+      <div>
+        <h3 class="s-t">Lee los pliegos completos siempre</h3>
+        <p class="s-d">Los pliegos tienen todos los requisitos habilitantes. Léelos antes de decidir si presentas — muchos procesos excluyen automáticamente sin que te des cuenta.</p>
+      </div>
+    </div>
+    <div class="s-step">
+      <div class="s-box" aria-hidden="true">→</div>
+      <div>
+        <h3 class="s-t">Activa alertas en SECOP II</h3>
+        <p class="s-d">Configura alertas por palabras clave: arquitectura, diseño arquitectónico, interventoría, branding institucional. Sé el primero en ver cada oportunidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section id="contacto" aria-labelledby="contacto-heading">
+  <div class="sec-label" aria-hidden="true">Contacto</div>
+  <h2 id="contacto-heading" class="sec-h fi">Hablemos<br>de tu <em>proyecto.</em></h2>
+  <div class="ct-grid">
+    <div class="fi">
+      <h3 class="ct-info-h">La primera<br>conversación no tiene costo.</h3>
+      <address class="ct-address">
+        <div class="ct-item">
+          <span class="ct-label">Email</span>
+          <a href="mailto:sergioancalpe@gmail.com" class="ct-val">sergioancalpe@gmail.com</a>
+        </div>
+        <div class="ct-item">
+          <span class="ct-label">Teléfono</span>
+          <a href="tel:+573182134982" class="ct-val">+57 318 213 4982</a>
+        </div>
+        <div class="ct-item">
+          <span class="ct-label">Ciudad</span>
+          <span class="ct-val">Bogotá, Colombia</span>
+        </div>
+        <div class="ct-item">
+          <span class="ct-label">Instagram</span>
+          <a href="https://instagram.com/checherearquitectos" class="ct-val" target="_blank" rel="noopener noreferrer">@checherearquitectos</a>
+        </div>
+      </address>
+      <div class="ct-note">
+        <p>Respondemos en menos de 24 horas.<br>Disponibles para proyectos en Bogotá y alrededores.<br>Atención a organizaciones sociales con tarifas diferenciales.</p>
+      </div>
+    </div>
+    <div class="fi">
+      <form id="contactForm" novalidate>
+        <div class="f-row">
+          <div class="f-group">
+            <label for="fieldName">Nombre</label>
+            <input type="text" id="fieldName" name="from_name" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+          <div class="f-group">
+            <label for="fieldEmail">Correo</label>
+            <input type="email" id="fieldEmail" name="from_email" placeholder="tu@correo.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="fieldProject">Tipo de proyecto</label>
+          <select id="fieldProject" name="project_type" required>
+            <option value="">Selecciona...</option>
+            <option value="Diagnóstico de espacio">Diagnóstico de espacio</option>
+            <option value="Diseño arquitectónico + renders">Diseño arquitectónico + renders</option>
+            <option value="Proyecto completo (diseño + obra)">Proyecto completo (diseño + obra)</option>
+            <option value="Identidad de marca + web">Identidad de marca + web</option>
+            <option value="Licitación pública / SECOP">Licitación pública / SECOP</option>
+            <option value="Organización social / Chechere Solidario">Organización social / Chechere Solidario</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label for="fieldMessage">Tu proyecto</label>
+          <textarea id="fieldMessage" name="message" placeholder="Cuéntanos qué necesitas, dónde está el proyecto y tu presupuesto aproximado..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send" id="btnSend">Enviar mensaje →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <a href="#hero" class="f-logo">chechere <span>arquitectos</span></a>
+  <nav class="f-links" aria-label="Navegación pie de página">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#solidario">Solidario</a>
+    <a href="#secop">SECOP</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <p class="f-copy">© 2025 Chechere Arquitectos · Bogotá</p>
+</footer>
+
+</body>
+</html>
