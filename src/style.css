@@ -186,13 +186,14 @@ nav#mainNav .nav-r a.nav-cta:hover {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  width: 420px;
 }
 
 .hero-eyebrow::before,
 .hero-eyebrow::after {
   content: '';
   display: block;
-  width: 32px;
+  flex: 1;
   height: .5px;
   background: var(--p3);
 }
@@ -1236,9 +1237,7 @@ footer {
   #hero             { padding: 80px 20px 56px; justify-content: flex-start; padding-top: 96px; }
   .hero-top         { margin-bottom: 2.5rem; }
   .hero-h           { font-size: clamp(32px, 10vw, 48px); }
-  .hero-eyebrow     { font-size: 8px; gap: 10px; }
-  .hero-eyebrow::before,
-  .hero-eyebrow::after { width: 20px; }
+  .hero-eyebrow     { font-size: 8px; gap: 10px; width: 90vw; }
 
   /* Caja 3D */
   .scene       { width: 240px; height: 240px; perspective: 700px; }
