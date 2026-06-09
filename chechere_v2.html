@@ -390,7 +390,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
   <a href="#servicios" onclick="closeMenu()">Servicios</a>
   <a href="#portafolio" onclick="closeMenu()">Portafolio</a>
   <a href="#solidario" onclick="closeMenu()">Solidario</a>
-  <a href="#secop" onclick="closeMenu()">SECOP</a>
   <a href="#contacto" class="mob-cta" onclick="closeMenu()">Contacto →</a>
 </div>
 
@@ -402,7 +401,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
     <a href="#servicios">Servicios</a>
     <a href="#portafolio">Portafolio</a>
     <a href="#solidario">Solidario</a>
-    <a href="#secop">SECOP</a>
     <a href="#contacto" class="nav-cta">Contacto</a>
   </div>
   <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Menú">
@@ -463,13 +461,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
         <span class="face-arrow">contactar →</span>
       </a>
 
-      <!-- BASE: SECOP -->
-      <a class="face face-bottom" href="#secop">
-        <div class="face-label">Estado</div>
-        <div class="face-word">chechere<em>que licita</em></div>
-        <div class="face-desc">Contratación pública · SECOP II · Licitaciones</div>
-        <span class="face-arrow">guía SECOP →</span>
-      </a>
 
     </div>
   </div>
@@ -725,61 +716,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
   </div>
 </section>
 
-<!-- ─── SECOP ─── -->
-<section id="secop">
-  <div class="sec-label">Contratación pública</div>
-  <h2 class="sec-h fi">Guía para<br>licitar con el <em>Estado.</em></h2>
-  <p class="secop-intro fi">Dos registros clave para participar en licitaciones públicas como Chechere Arquitectos: el RUP en la Cámara de Comercio y la cuenta de proveedor en SECOP II.</p>
-
-  <div class="s-tabs">
-    <button class="s-tab on" onclick="stab('rup',this)">01 · RUP</button>
-    <button class="s-tab" onclick="stab('s2',this)">02 · SECOP II</button>
-    <button class="s-tab" onclick="stab('docs',this)">03 · Documentos</button>
-    <button class="s-tab" onclick="stab('tips',this)">04 · Consejos</button>
-  </div>
-
-  <div class="s-panel on" id="tp-rup">
-    <div class="s-step"><div class="s-box">1</div><div><div class="s-t">Constituir la empresa legalmente</div><div class="s-d">Matrícula mercantil activa en Cámara de Comercio de Bogotá y RUT actualizado ante la DIAN. Puedes iniciar como persona natural — no necesitas crear una empresa para licitar.</div></div></div>
-    <div class="s-step"><div class="s-box">2</div><div><div class="s-t">Solicitar inscripción en el RUP</div><div class="s-d">El Registro Único de Proponentes certifica tu capacidad jurídica, financiera, organizacional y de experiencia ante el Estado. Se tramita en la CCB en línea o presencialmente.<br><a href="https://linea.ccb.org.co/rup/" class="s-link" target="_blank">Ir a CCB en línea →</a></div></div></div>
-    <div class="s-step"><div class="s-box">3</div><div><div class="s-t">Diligenciar el formulario RUES</div><div class="s-d">Completa el Registro Único Empresarial con actividad económica CIIU 7110 (arquitectura e ingeniería) y clasificación UNSPSC de tus servicios. Adjunta experiencia acreditable.</div></div></div>
-    <div class="s-step"><div class="s-box">4</div><div><div class="s-t">Pagar y esperar firmeza</div><div class="s-d">La CCB procesa en máx. 15 días hábiles. El certificado RUP queda en firme a los 10 días hábiles del registro. A partir de ahí puedes presentar ofertas.</div></div></div>
-    <div class="s-step"><div class="s-box">5</div><div><div class="s-t">Renovar antes del 5 de abril cada año</div><div class="s-d">El RUP debe renovarse anualmente. Si no se renueva a tiempo cesan sus efectos y no podrás participar en licitaciones hasta volver a inscribirte.</div></div></div>
-    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Como persona natural</strong> puedes inscribirte en el RUP directamente con tu cédula. No necesitas crear una empresa primero para empezar a licitar.</div></div>
-  </div>
-
-  <div class="s-panel" id="tp-s2">
-    <div class="s-step"><div class="s-box">1</div><div><div class="s-t">Ingresar a SECOP II</div><div class="s-d">Accede a secop2.colombiacompra.gov.co — plataforma oficial obligatoria según Circular 003 de Colombia Compra Eficiente para todos los procesos de contratación pública.<br><a href="https://www.secop2.gov.co" class="s-link" target="_blank">Ir a SECOP II →</a></div></div></div>
-    <div class="s-step"><div class="s-box">2</div><div><div class="s-t">Crear cuenta de usuario proveedor</div><div class="s-d">Haz clic en "Registro". Como persona natural cumples el rol de administrador y proveedor simultáneamente. SECOP II confirma la creación por correo.</div></div></div>
-    <div class="s-step"><div class="s-box">3</div><div><div class="s-t">Crear o vincular cuenta de la empresa</div><div class="s-d">Ingresa NIT, razón social, actividad económica y datos de contacto. Si ya existe una cuenta de tu empresa, solicita acceso al administrador existente.</div></div></div>
-    <div class="s-step"><div class="s-box">4</div><div><div class="s-t">Buscar oportunidades</div><div class="s-d">Filtra procesos por sector (construcción, arquitectura, diseño), ciudad y entidad. Activa alertas para recibir notificaciones de nuevos procesos relevantes.<br><a href="https://consultaprocesos.colombiacompra.gov.co/" class="s-link" target="_blank">Consultar procesos →</a></div></div></div>
-    <div class="s-step"><div class="s-box">5</div><div><div class="s-t">Presentar ofertas en línea</div><div class="s-d">Desde tu cuenta radica observaciones a pliegos, adjunta documentos y hace seguimiento contractual. Todo en línea y en tiempo real. Guarda siempre comprobantes.</div></div></div>
-    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Capacitación gratuita:</strong> Colombia Compra Eficiente ofrece sesiones virtuales mensuales sobre SECOP II para proveedores. Consulta el calendario en colombiacompra.gov.co.</div></div>
-  </div>
-
-  <div class="s-panel" id="tp-docs">
-    <p style="font-size:12px;color:var(--m);margin-bottom:1.2rem">Documentos clave para inscripción y licitaciones:</p>
-    <div class="doc-grid">
-      <div class="doc-i"><div class="doc-ico">C</div><div class="doc-txt"><strong>Cédula de ciudadanía</strong>Con marca de agua "solo válido para SECOP II"</div></div>
-      <div class="doc-i"><div class="doc-ico">R</div><div class="doc-txt"><strong>RUT actualizado</strong>DIAN · Actividad económica CIIU 7110</div></div>
-      <div class="doc-i"><div class="doc-ico">M</div><div class="doc-txt"><strong>Matrícula mercantil</strong>Certificado de existencia vigente</div></div>
-      <div class="doc-i"><div class="doc-ico">F</div><div class="doc-txt"><strong>Estados financieros</strong>A 31 dic. del año anterior, firmados por RL</div></div>
-      <div class="doc-i"><div class="doc-ico">P</div><div class="doc-txt"><strong>Declaración de parafiscales</strong>Salud, pensión y ARL al día</div></div>
-      <div class="doc-i"><div class="doc-ico">E</div><div class="doc-txt"><strong>Certificados de experiencia</strong>Actas de contratos pasados (Mandarina, Raelja)</div></div>
-      <div class="doc-i"><div class="doc-ico">T</div><div class="doc-txt"><strong>Tarjeta profesional</strong>Matrícula de arquitecto vigente (SCA/COPNIA)</div></div>
-      <div class="doc-i"><div class="doc-ico">B</div><div class="doc-txt"><strong>Certificación bancaria</strong>Cuenta activa a nombre de la empresa</div></div>
-    </div>
-    <div class="alert"><div class="alert-i">!</div><div class="alert-t"><strong>Tarjeta profesional:</strong> Para contratos de arquitectura y obra, las entidades exigen matrícula profesional vigente. Verifica que la tuya esté activa en la SCA o COPNIA.</div></div>
-  </div>
-
-  <div class="s-panel" id="tp-tips">
-    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Empieza por contratos de menor cuantía</div><div class="s-d">Mínima y menor cuantía tienen menos requisitos y son la mejor forma de ganar experiencia acreditable. Busca diseño, consultorías y estudios técnicos pequeños.</div></div></div>
-    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Acredita con proyectos pasados</div><div class="s-d">Tus contratos en Mandarina, Raelja y Kakto son experiencia acreditable. Solicita certificaciones — incluso proyectos privados sirven con carta de la empresa y actas.</div></div></div>
-    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Considera consorcio o unión temporal</div><div class="s-d">Si un proceso requiere más experiencia o capital, asóciate con otra empresa. Permite acceder a contratos más grandes desde el inicio sin esperar años.</div></div></div>
-    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Lee los pliegos completos siempre</div><div class="s-d">Los pliegos tienen todos los requisitos habilitantes. Léelos antes de decidir si presentas — muchos procesos excluyen automáticamente sin que te des cuenta.</div></div></div>
-    <div class="s-step"><div class="s-box">→</div><div><div class="s-t">Activa alertas en SECOP II</div><div class="s-d">Configura alertas por palabras clave: arquitectura, diseño arquitectónico, interventoría, branding institucional. Sé el primero en ver cada oportunidad.</div></div></div>
-  </div>
-</section>
-
 <!-- ─── CONTACTO ─── -->
 <section id="contacto">
   <div class="sec-label">Contacto</div>
@@ -787,7 +723,7 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
   <div class="ct-grid">
     <div class="fi">
       <h3>La primera<br>conversación no tiene costo.</h3>
-      <div class="ct-item"><span class="ct-label">Email</span><span class="ct-val">Sergioancalpe@gmail.com</span></div>
+      <div class="ct-item"><span class="ct-label">Email</span><span class="ct-val">checherearquitectos@gmail.com</span></div>
       <div class="ct-item"><span class="ct-label">Teléfono</span><span class="ct-val">+57 318 213 4982</span></div>
       <div class="ct-item"><span class="ct-label">Ciudad</span><span class="ct-val">Bogotá, Colombia</span></div>
       <div class="ct-item"><span class="ct-label">Instagram</span><span class="ct-val">@checherearquitectos</span></div>
@@ -807,7 +743,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
           <option>Diseño arquitectónico + renders</option>
           <option>Proyecto completo (diseño + obra)</option>
           <option>Identidad de marca + web</option>
-          <option>Licitación pública / SECOP</option>
           <option>Organización social / Chechere Solidario</option>
           <option>Otro</option>
         </select>
@@ -826,7 +761,6 @@ footer{background:var(--n);padding:28px 48px;display:flex;justify-content:space-
     <a href="#servicios">Servicios</a>
     <a href="#portafolio">Portafolio</a>
     <a href="#solidario">Solidario</a>
-    <a href="#secop">SECOP</a>
     <a href="#contacto">Contacto</a>
   </div>
   <div class="f-copy">© 2025 Chechere Arquitectos · Bogotá</div>
