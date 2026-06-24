@@ -6,11 +6,11 @@ export function initScrollAnimations() {
         observer.unobserve(entry.target);
       }
     }),
-    { threshold: 0.1 }
+    { threshold: 0.06, rootMargin: '0px 0px -40px 0px' }
   );
 
   document.querySelectorAll('.fi').forEach(el => observer.observe(el));
 
-  // El hero es visible inmediatamente, sin esperar scroll
+  // Hero visible inmediatamente
   document.querySelectorAll('#hero .fi').forEach(el => el.classList.add('v'));
 }
