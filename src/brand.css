@@ -1,0 +1,108 @@
+/* ============================================================
+   CHECHERE STUDIO — Variables de marca y tipografía
+   ============================================================
+   QUÉ ES ESTE ARCHIVO:
+   Define los colores, la tipografía y los pesos oficiales de
+   la marca como variables CSS reutilizables en todo el sitio.
+
+   DÓNDE VA:
+   Guardalo como  src/brand.css  en tu proyecto.
+   Luego importalo UNA vez en tu archivo de entrada:
+     - React  -> en src/main.jsx  escribí:  import './brand.css'
+     - Vue    -> en src/main.js   escribí:  import './brand.css'
+     - Plano  -> en index.html:  <link rel="stylesheet" href="/src/brand.css">
+
+   LA FUENTE (Snaga Unicase Display):
+   Es de Adobe Fonts, licenciada. Se carga con TU kit personal.
+   Pasos:
+   1. Entrá a fonts.adobe.com (con tu Creative Cloud).
+   2. Buscá "Snaga Unicase Display" -> "Add to Web Project".
+   3. Creá un proyecto y copiá el kit ID que te dan.
+   4. Pegá este <link> en el <head> de tu index.html
+      (reemplazando TU_KIT_ID por el tuyo):
+
+      <link rel="stylesheet" href="https://use.typekit.net/TU_KIT_ID.css">
+
+   5. Listo. La variable --font-brand de abajo ya usa la fuente.
+      Mientras no pegues el kit, se muestra la fuente de respaldo.
+   ============================================================ */
+
+:root {
+
+  /* ---------- COLORES DE MARCA ---------- */
+  /* Primarios */
+  --negro:        #000000;   /* Color madre. Fondos, presencia. 60% */
+  --hueso:        #F4F1EC;   /* Neutro que respira. Fondos claros. 30% */
+  --terracota:    #C25217;   /* Acento único oficial. Detalles. 10% */
+
+  /* Apoyo (neutros) */
+  --negro-suave:  #141210;   /* Tarjetas oscuras, fondos con textura */
+  --hueso-2:      #EAE5DC;   /* Líneas divisorias, fondos de tabla */
+  --plata:        #9A9A9A;   /* Texto tenue sobre negro */
+  --plata-oscura: #5C5A57;   /* Texto secundario, pies de página */
+  --texto:        #1C1A18;   /* Texto principal sobre claro */
+
+  /* ---------- TIPOGRAFÍA ---------- */
+  /* Fuente de marca: al activar tu kit de Adobe, esto usa la real.
+     Si aún no lo activás, cae en la fuente de respaldo del sistema. */
+  --font-brand: "snaga-unicase-display", "Helvetica Neue", Arial, sans-serif;
+
+  /* Fuente de apoyo para textos largos y párrafos */
+  --font-texto: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* ---------- PESOS ---------- */
+  --peso-alto:  800;   /* Logo, titulares "chechere" */
+  --peso-medio: 600;   /* Subtítulos, énfasis */
+  --peso-light: 300;   /* Cuerpo, descriptor "studio" */
+
+  /* ---------- ESPACIADOS DE LETRA ---------- */
+  --track-titular: -1px;   /* Titulares apretados */
+  --track-studio:   3px;   /* Descriptor abierto */
+}
+
+/* ============================================================
+   CLASES DE APOYO — usalas directo en tu HTML/JSX/template
+   ============================================================ */
+
+/* Logo escrito con texto (mientras no uses el SVG del símbolo) */
+.marca {
+  font-family: var(--font-brand);
+  font-weight: var(--peso-alto);
+  letter-spacing: var(--track-titular);
+  color: var(--negro);
+}
+.marca .studio {
+  font-weight: var(--peso-light);
+  letter-spacing: var(--track-studio);
+  color: var(--terracota);
+}
+
+/* Versión del logo sobre fondo oscuro */
+.marca--claro { color: var(--hueso); }
+.marca--claro .studio { color: var(--terracota); }
+
+/* Utilidades de color de fondo */
+.bg-negro    { background: var(--negro);    color: var(--hueso); }
+.bg-hueso    { background: var(--hueso);    color: var(--texto); }
+.bg-terracota{ background: var(--terracota); color: var(--hueso); }
+
+/* Utilidades de color de texto */
+.txt-terracota { color: var(--terracota); }
+.txt-negro     { color: var(--negro); }
+.txt-plata     { color: var(--plata-oscura); }
+
+/* Titulares de marca */
+.titular {
+  font-family: var(--font-brand);
+  font-weight: var(--peso-alto);
+  letter-spacing: var(--track-titular);
+  line-height: 0.95;
+}
+
+/* Cuerpo de texto */
+.cuerpo {
+  font-family: var(--font-texto);
+  font-weight: var(--peso-light);
+  line-height: 1.6;
+  color: var(--texto);
+}

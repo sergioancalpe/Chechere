@@ -1,5 +1,5 @@
-import './brand.css';
 import './style.css';
+import './style_rojo.css';
 import { initCursor } from './js/cursor.js';
 import { initCube } from './js/cube.js';
 import { initMenu } from './js/menu.js';
@@ -11,7 +11,6 @@ import { initPortfolioScroll } from './js/portfolio-scroll.js';
 import { initPortfolioModal } from './js/portfolio-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll: Lenis drives GSAP ticker, ScrollTrigger stays in sync
   if (window.Lenis && window.gsap && window.ScrollTrigger) {
     const lenis = new Lenis({
       duration: 1.25,
