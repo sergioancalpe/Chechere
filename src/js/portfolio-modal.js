@@ -1,22 +1,42 @@
 const PROJECT_DATA = {
   'el-topo': {
-    desc: 'Intervención de un apartamento en Bogotá: espacios comprimidos rediseñados para aprovechar cada centímetro. Paleta de colores neutros, madera y luz controlada. Proyecto de diseño interior con modelado BIM completo.',
+    desc: {
+      reto: 'Espacio residencial con distribución rígida y poca luz natural.',
+      solucion: 'Rediseño interior y redistribución para ganar amplitud y luz.',
+      resultado: 'Modelado BIM completo con paleta neutra, madera y luz controlada.'
+    },
     tags: ['Interior', 'Residencial', 'Revit', 'Lumion', 'Bogotá']
   },
   'la-ofi': {
-    desc: 'Oficina en Bogotá transformada en espacio de trabajo colaborativo. Zonificación acústica, iluminación técnica y mobiliario modular para máxima productividad sin sacrificar estética.',
+    desc: {
+      reto: 'Adaptar un espacio a un entorno de trabajo funcional y con identidad.',
+      solucion: 'Diseño de interiorismo enfocado en flujo, ergonomía y marca.',
+      resultado: 'Zonificación acústica y mobiliario modular para mayor productividad.'
+    },
     tags: ['Interior', 'Oficina', 'Diseño BIM', 'Bogotá']
   },
   'el-nido': {
-    desc: 'Rediseño interior residencial con énfasis en materialidad local y confort climático pasivo. Aprovechamiento de luz natural y ventilación cruzada integrados al diseño.',
+    desc: {
+      reto: 'Vivienda con poco aprovechamiento de luz natural y ventilación.',
+      solucion: 'Rediseño interior con materialidad local y confort climático pasivo.',
+      resultado: 'Luz natural y ventilación cruzada integradas al diseño.'
+    },
     tags: ['Interior', 'Residencial', 'Materialidad', 'Bogotá']
   },
   'villa-magnolia': {
-    desc: 'Proyecto residencial completo con gestión BIM integral. Documentación técnica exhaustiva, renders fotorrealistas y supervisión de obra desde inicio hasta entrega.',
+    desc: {
+      reto: 'Proyecto residencial desde diagnóstico hasta ejecución.',
+      solucion: 'Diseño arquitectónico con documentación técnica y residencia de obra.',
+      resultado: 'Documentación técnica exhaustiva y supervisión de principio a fin.'
+    },
     tags: ['Residencial', 'BIM completo', 'Supervisión', 'Bogotá']
   },
   'recuperacion-urbana-la-union': {
-    desc: 'Recuperación de espacio público en el barrio La Unión, Fómeque, Cundinamarca. Cuatro zonas complementarias: plaza central con patrón geométrico en amarillo, corredor peatonal lineal con parqueo integrado, zona de actividad física bajo pérgola metálica, y área de descanso con escultura de identidad local. Paisajismo bioclimático con plantas nativas, bolones y cobertura vegetal densa. Diseño BIM completo con renders fotorrealistas en Lumion.',
+    desc: {
+      reto: 'Recuperar una plaza central deteriorada como espacio público de encuentro.',
+      solucion: 'Intervención urbana con tratamiento de piso y patrón geométrico identitario.',
+      resultado: 'Cuatro zonas renovadas con paisajismo bioclimático y plantas nativas.'
+    },
     tags: ['Urbano', 'Espacio público', 'BIM', 'Lumion', 'Paisajismo', 'Fómeque', 'Cundinamarca'],
     images: [
       '/images/portfolio/recuperacion-urbana-la-union/cover.jpg',
@@ -32,7 +52,11 @@ const PROJECT_DATA = {
     ]
   },
   'cid': {
-    desc: 'Sistema de identidad visual para organización con presencia en los 32 departamentos de Colombia, certificada HQAI. Brandbook, piezas digitales y web oficial para programas de educación flexible, protección psicosocial y educación en riesgo de minas.',
+    desc: {
+      reto: 'Dar identidad visual coherente a una ONG con presencia en los 32 departamentos.',
+      solucion: 'Identidad visual completa + sitio web para una organización certificada HQAI.',
+      resultado: 'Marca y web unificadas para sus programas de educación y protección.'
+    },
     tags: ['Branding', 'Web', 'Identidad visual', 'ONG', 'Colombia', 'HQAI'],
     images: [
       '/images/portfolio/cid/cover.jpg',
@@ -41,7 +65,11 @@ const PROJECT_DATA = {
     ]
   },
   'angeles-en-el-manglar': {
-    desc: 'Brandbook integral y web para fundación aliada con ICBF en Tumaco, Nariño. Sistema visual completo enfocado en primera infancia, recuperación nutricional y empoderamiento comunitario en el Pacífico.',
+    desc: {
+      reto: 'Comunicar el trabajo de una fundación aliada del ICBF en el Pacífico.',
+      solucion: 'Brandbook integral + sitio web para la organización.',
+      resultado: 'Identidad y presencia digital para sus programas de primera infancia.'
+    },
     tags: ['Branding', 'Web', 'ICBF', 'Tumaco', 'Sector social'],
     images: [
       '/images/portfolio/angeles-en-el-manglar/01.jpg',
@@ -51,11 +79,19 @@ const PROJECT_DATA = {
     ]
   },
   'raelja': {
-    desc: 'Documentación técnica y gestión de infraestructura institucional bajo contratación pública. Cumplimiento NSR-10, normativa COPASST y requisitos de la Policía Nacional de Colombia.',
+    desc: {
+      reto: 'Gestionar infraestructura institucional bajo contratación pública.',
+      solucion: 'Documentación técnica con cumplimiento NSR-10 y normativa COPASST.',
+      resultado: 'Proyecto conforme a los requisitos de la Policía Nacional.'
+    },
     tags: ['Infraestructura', 'Contratación pública', 'NSR-10', 'Institucional']
   },
   'dron': {
-    desc: 'Levantamientos aéreos y fotografía con dron DJI por distintas regiones de Colombia y el exterior. Boyacá, Cundinamarca, Antioquia, Pacífico, Tolima, Cancún y Panamá — paisaje, territorio y patrimonio vistos desde el aire.',
+    desc: {
+      reto: 'Levantamientos y registro visual precisos para obra y presentación.',
+      solucion: 'Fotografía aérea con piloto de dron certificado.',
+      resultado: 'Levantamientos topográficos, seguimiento de obra y material de presentación.'
+    },
     tags: ['Fotografía aérea', 'Dron', 'DJI', 'Levantamiento', 'Paisaje', 'Colombia'],
     images: [
       '/images/portfolio/dron/capurgana-01.jpg',
@@ -76,6 +112,13 @@ const PROJECT_DATA = {
     ]
   }
 };
+
+function accentLastWord(title) {
+  const words = title.trim().split(' ');
+  const last = words.pop();
+  const prefix = words.length ? words.join(' ') + ' ' : '';
+  return `${prefix}<span class="pm-title-accent">${last}</span>`;
+}
 
 export function initPortfolioModal() {
   const modal     = document.getElementById('portModal');
@@ -150,9 +193,13 @@ export function initPortfolioModal() {
     const extra    = PROJECT_DATA[slug] || {};
 
     pmCat.textContent   = cat;
-    pmTitle.textContent = title;
+    pmTitle.innerHTML   = accentLastWord(title);
     pmMeta.textContent  = [year, location].filter(Boolean).join(' · ');
-    pmDesc.textContent  = extra.desc || '';
+    pmDesc.innerHTML    = extra.desc
+      ? `<p class="pm-desc-line"><strong>Reto</strong> ${extra.desc.reto}</p>
+         <p class="pm-desc-line"><strong>Solución</strong> ${extra.desc.solucion}</p>
+         <p class="pm-desc-line"><strong>Resultado</strong> ${extra.desc.resultado}</p>`
+      : '';
     pmTags.innerHTML    = (extra.tags || []).map(t => `<span class="pm-tag">${t}</span>`).join('');
 
     const srcs = extra.images || (() => {

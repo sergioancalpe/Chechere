@@ -6,7 +6,6 @@ import { initMenu } from './js/menu.js';
 import { initScrollAnimations } from './js/animations.js';
 import { initTabs } from './js/tabs.js';
 import { initContact } from './js/contact.js';
-import { initProceso } from './js/proceso.js';
 import { initPortfolioScroll } from './js/portfolio-scroll.js';
 import { initPortfolioModal } from './js/portfolio-modal.js';
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initTabs();
   initContact();
-  initProceso();
   initPortfolioScroll();
   initPortfolioModal();
 
